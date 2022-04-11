@@ -10,6 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
+import image from "../../../../src/assets/logo-redback.png";
 
 const NavBarComponent = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -41,7 +42,14 @@ const NavBarComponent = () => {
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
             <NavLink to="/" style={{ color: "white" }}>
-              RedBack Logo
+              <Box
+                component="img"
+                sx={{
+                  height: 80,
+                }}
+                alt=" logo."
+                src={image}
+              />
             </NavLink>
           </Typography>
 
@@ -74,6 +82,11 @@ const NavBarComponent = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
+              <MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center" exact component={NavLink} to="/">
+                  Home
+                </Typography>
+              </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography
                   textAlign="center"
@@ -113,13 +126,24 @@ const NavBarComponent = () => {
           <Typography
             variant="h6"
             noWrap
-            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none", color: "white" },
+            }}
             exact
             component={NavLink}
             to="/"
-            style={{ color: "white" }}
           >
-            RedBack Logo
+            <Box
+              component="img"
+              style={{ color: "#e87461" }}
+              sx={{
+                height: 70,
+                color: "#e87461",
+              }}
+              alt="Your logo."
+              src={image}
+            />
           </Typography>
           <Box
             sx={{ pl: 15, flexGrow: 1, display: { xs: "none", md: "flex" } }}
@@ -129,26 +153,44 @@ const NavBarComponent = () => {
               sx={{ my: 2, color: "white", display: "block" }}
               exact
               component={NavLink}
+              to="/"
+            >
+              Home
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ pl: "15%", my: 2, color: "white", display: "block" }}
+              exact
+              component={NavLink}
               to="/aboutUs"
             >
               About Us
             </Button>
-            <Button
-              sx={{ pl: 15, my: 2, color: "white", display: "block" }}
-              exact
-              component={NavLink}
-              to="/loginIn"
-            >
-              Login
-            </Button>
+
             <Button
               onClick={handleCloseNavMenu}
-              sx={{ pl: 15, my: 2, color: "white", display: "block" }}
+              sx={{ pl: "15%", my: 2, color: "white", display: "block" }}
               exact
               component={NavLink}
               to="/signUp"
             >
               Create Account
+            </Button>
+
+            <Button
+              sx={{
+                pl: 15,
+                my: 2,
+                color: "white",
+                display: "block",
+                position: "absolute",
+                left: "85%",
+              }}
+              exact
+              component={NavLink}
+              to="/loginIn"
+            >
+              Login
             </Button>
           </Box>
 
