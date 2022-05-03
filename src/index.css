@@ -20,3 +20,27 @@ code {
   border: 3px solid green;
   padding: 10px;
 }
+.logo {
+  margin-top: 60px;
+  margin-left: 50px;
+  padding-bottom: 10px;
+
+  height: 80%;
+  width: 80%;
+  transform: rotatey(0deg) rotate(-10deg); 
+}
+
+.half-circle {
+  margin-top: -0px;
+  margin-right:5px;
+  padding-right: 15px;
+  margin-left: -20px;
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 100px;
+  min-height: 100px; /* as the half of the width */
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  transform: rotatey(0deg) rotate(10deg); 
+
+}
