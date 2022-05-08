@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -32,17 +31,29 @@ const NavBarComponent = () => {
   };
 
   return (
+    
     <Container maxWidth="x">
       <Toolbar
         disableGutters
         style={{ position: "relative", paddingRight: "20px" }}
       >
+         <Typography
+           sx={{
+            mr: 2,
+            display: { xs: 'none', md: 'flex' },
+            fontFamily: 'monospace',
+            fontWeight: 700,
+            letterSpacing: '.3rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}
+         >
         <NavLink to="/">
           <div className="half-circle">
             <img className="logo" src={image} />
           </div>
         </NavLink>
-
+        </Typography>
         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
           <IconButton
             size="large"
@@ -52,14 +63,14 @@ const NavBarComponent = () => {
             onClick={handleOpenNavMenu}
             color="inherit"
           >
-            <MenuIcon style={{ position: "relative", left: "600%" }} />
+            <MenuIcon style={{color:"white" }} />
           </IconButton>
           <Menu
             id="menu-appbar"
             anchorEl={anchorElNav}
             anchorOrigin={{
               vertical: "bottom",
-              horizontal: "left",
+              horizontal: "right",
             }}
             keepMounted
             transformOrigin={{
@@ -69,7 +80,7 @@ const NavBarComponent = () => {
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
             sx={{
-              display: { xs: "block", md: "none" },
+              display: { xs: "block", md: "none",color: "white"},
             }}
           >
             <MenuItem onClick={handleCloseNavMenu}>
@@ -93,7 +104,7 @@ const NavBarComponent = () => {
                 textAlign="center"
                 exact
                 component={NavLink}
-                to="/signUp"
+                to="/ourTeam"
               >
                 {" "}
                 Our Team
@@ -105,7 +116,7 @@ const NavBarComponent = () => {
                 textAlign="center"
                 exact
                 component={NavLink}
-                to="/signUp"
+                to="/ourProject"
               >
                 {" "}
                 Our Project
@@ -117,7 +128,7 @@ const NavBarComponent = () => {
                 textAlign="center"
                 exact
                 component={NavLink}
-                to="/signUp"
+                to="/contactUs"
               >
                 {" "}
                 Contact Us
@@ -138,6 +149,26 @@ const NavBarComponent = () => {
           </Menu>
         </Box>
         <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+           
+            <img className="logo1 circle" src={image} />
+         
+          </Typography>
+        <Typography
           variant="h6"
           noWrap
           sx={{
@@ -148,10 +179,7 @@ const NavBarComponent = () => {
           component={NavLink}
           to="/"
         ></Typography>
-        <Box
-          style={{ marginTop: "10px", marginLeft: "100px" }}
-          sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
-        >
+         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           <Button
             style={{
               borderRadius: 10,
@@ -200,7 +228,7 @@ const NavBarComponent = () => {
             sx={{ mx: 8, color: "white", display: "block", marginLeft: "" }}
             exact
             component={NavLink}
-            to="/signUp"
+            to="/ourTeam"
           >
             Our Team
           </Button>
@@ -218,7 +246,7 @@ const NavBarComponent = () => {
             sx={{ mx: 8, color: "white", display: "block", marginLeft: "" }}
             exact
             component={NavLink}
-            to="/signUp"
+            to="/ourProject"
           >
             Our Project
           </Button>
@@ -228,7 +256,7 @@ const NavBarComponent = () => {
               borderRadius: 10,
               backgroundColor: "#E87461",
               padding: "18px 36px",
-              fontSize: "4px",
+              fontSize: "5px",
               fontSize: "1vw",
             }}
             size="large"
@@ -237,7 +265,7 @@ const NavBarComponent = () => {
             sx={{ mx: 8, color: "white", display: "block" }}
             exact
             component={NavLink}
-            to="/signUp"
+            to="/contactUs"
           >
             Contact Us
           </Button>
