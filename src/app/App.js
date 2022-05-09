@@ -2,13 +2,13 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { Grid } from "@mui/material";
 
+
 import HomepageComponent from "./components/home/HomeComponent";
 import NavBarComponent from "./shared/components/NavBarComponent";
 import AboutUsComponent from "./components/aboutUs/AboutUsComponent";
-import OurProjectsComponent from "./components/ourProjects/OurProjectsComponent";
+import OurProjectComponent from "./components/ourProject/OurProjectComponent";
 import LoginComponent from "./components/login/LoginComponent";
 import OurTeamComponent from "./components/ourTeam/OurTeamComponent";
-import OurProjectComponent from "./components/ourProject/OurProjectComponent";
 import ContactUsComponent from "./components/contactUs/ContactUsComponent";
 
 function App() {
