@@ -7,4 +7,9 @@
       margin: 0 auto;
       max-width: 320px;
     }
+
+    .TextField{
+      color: rgb(255, 255, 255);
+    }
   }
+  

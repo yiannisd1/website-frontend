@@ -9,7 +9,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-
+import { useNavigate } from "react-router-dom"
 import "./LoginStyles.css"
 
 export default function LoginComponent() {
