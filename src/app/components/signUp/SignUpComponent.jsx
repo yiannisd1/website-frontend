@@ -3,8 +3,8 @@ import "./SignUpStyles.css"
 import React, { useState } from 'react';
 import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
-
-function SignUpComponent() {
+import { alpha, styled } from '@mui/material/styles';
+export default function  SignUpComponent() {
   const [FirstName, setFirstName] = useState('');
   const [LastName, setLastName] = useState('');
   const [PhNumber, setPhNumber] = useState('');
@@ -41,15 +41,34 @@ function SignUpComponent() {
     }
     e.preventDefault();
   }
-  
+  const CssTextField = styled(TextField)({
+    '& label.Mui-focused': {
+      color: 'white',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'white',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: 'white',
+      },
+      '&:hover fieldset': {
+        borderColor: 'white',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: 'white',
+      },
+    },
+  });
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="Signup">
+      <header className="Signup-header">
         <form onSubmit={(e) => { handleSubmit(e) }}>
           <h2> RedBack SignUp Form</h2>
           <div className="signUpInputs">
-            <TextField 
+            <CssTextField 
             id="firstName" 
+            sx={{ "& label": { color: "white" }}}
             label="First Name" 
             variant="outlined"
             required
@@ -57,7 +76,8 @@ function SignUpComponent() {
             onChange={(e)=> { handleFirstNChange(e) }} />
           </div>
           <div className="signUpInputs">
-            <TextField 
+            <CssTextField 
+            sx={{ "& label": { color: "white" }}}
             id="lastName" 
             label="Last Name" 
             variant="outlined"
@@ -66,7 +86,8 @@ function SignUpComponent() {
             onChange={(e)=> { handleLastNChange(e) }}/>
           </div>
           <div className="signUpInputs">
-            <TextField 
+            <CssTextField 
+            sx={{ "& label": { color: "white" }}}
             id="PhNumber" 
             label="Phone Number" 
             variant="outlined"
@@ -75,18 +96,22 @@ function SignUpComponent() {
             onChange={(e)=> { handlePhNumberChange(e) }} />
           </div>
           <div className="signUpInputs">
-            <TextField 
+            <CssTextField 
             id="email" 
+            inputProps={{
+              style: { color: "white" },
+            }}
+            sx={{ "& label": { color: "white" }}}
             label="Email" 
             variant="outlined"
             type="email"
-            helperText="e.g. name@icloud.com"
             required
             fullWidth
             onChange={(e) => { handleEmailChange(e) }} />
           </div>
           <div className="signUpInputs">
-            <TextField
+            <CssTextField
+            sx={{ "& label": { color: "white" }}}
             id="password"
             label="Password"
             type="password"
@@ -95,7 +120,8 @@ function SignUpComponent() {
             onChange={(e) => { handlePasswordChange(e) }} />
           </div>
           <div className="signUpInputs">
-            <TextField
+            <CssTextField
+            sx={{ "& label": { color: "white" }}}
             id="confPassword"
             label="Confirm Password"
             type="password"
@@ -106,12 +132,20 @@ function SignUpComponent() {
           </div>
           <div className="signUpInputs">
             <Button
+                style={{
+                  borderRadius: 25,
+                  backgroundColor: "#e87461",
+                  color: "#FFFF",
+                  padding: "10px 20px",
+                  fontSize: "15px"
+                }} 
               type="submit"
               variant="contained"
-              color="primary"
             >
-              Sign Up
-            </Button>
+              Create profile</Button>
+
+          
+
           </div>
         </form>
       </header>
@@ -119,5 +153,5 @@ function SignUpComponent() {
   );
 }
 
-export default SignUpComponent;
+
 

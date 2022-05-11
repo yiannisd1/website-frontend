@@ -2,16 +2,12 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Button";
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import { useNavigate } from "react-router-dom"
 import "./LoginStyles.css"
-
+import { alpha, styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom'
 export default function LoginComponent() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +19,25 @@ export default function LoginComponent() {
   function handleSubmit(event) {
     event.preventDefault();
 }
-
+const CssTextField = styled(TextField)({
+  '& label.Mui-focused': {
+    color: 'white',
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: 'white',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: 'white',
+    },
+    '&:hover fieldset': {
+      borderColor: 'white',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: 'white',
+    },
+  },
+});
 return (
   <div className="LoginComponent">
     <div style={{ padding: 30 , color : 'white'}}>
@@ -34,33 +48,42 @@ return (
       justify={'center'}
       alignItems={'center'}>
       <h1>RedBack Login</h1>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} >
       
-      <Grid style={{ padding: 20 }} item xs={12}>
-        
+      <Grid style={{ padding: 20 }} item xs={12} >
         <Form.Group size="lg" controlId="email">
-          <TextField label="Email"
+          <CssTextField label="Email"
             type="email"
-            variant="standard" 
-            sx={{ input: { color: 'white' } }} 
+            sx={{ "& label": { color: "white" } }}
+            inputProps={{
+              style: { color: "white" },
+            }}
+            variant="outlined" 
+            style={{"borderColor":"#62656A"}}
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            fullWidth
+            required
             >
-          </TextField>
+          </CssTextField>
         </Form.Group>
-        
         </Grid>
 
         <Grid style={{ padding: 20 }} item xs={12}>
         <Form.Group size="lg" controlId="password">
-          <TextField label="Password"
-            autofocus
-            variant="standard" 
-            sx={{ input: { color: 'white' } }} 
+          <CssTextField 
+            label="Password"
+            sx={{ "& label": { color: "white" }}}
+            inputProps={{
+              style: { color: "white" },
+            }}
+            style={{"borderColor":"#62656A"}}
+            variant="outlined" 
             type="password"
             value={password}
+            fullWidth
+            required
             onChange={(e) => setPassword(e.target.value)}
-          ></TextField>
+          ></CssTextField>
         </Form.Group>
         </Grid>
         <Grid style={{ padding: 20 }} item xs={12}>
@@ -75,6 +98,11 @@ return (
           fullWidth type="submit" disabled={!validateForm()}>
           Login
         </Button>
+        <div className="createprofile"> <Link style={{
+              color: "#FFFF",
+            }} 
+            to={"./signUp"}>  Create a profile </Link>
+        </div>
        </Grid>
       </Form>
     </Grid>

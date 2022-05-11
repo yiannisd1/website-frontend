@@ -1,15 +1,9 @@
-.App {
+.Signup {
     text-align: center;
     }
-    form {
-    border:2px solid rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    padding: 30px;
-    color: rgb(56, 14, 74);
-    }
+
   
-    .App-header {
-    background-color: rgb(232, 116, 97);
+    .Signup-header {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -20,5 +14,5 @@
     }
 
     .signUpInputs {
-        padding-bottom: 30px;
+        padding-bottom: 20px;
     }
