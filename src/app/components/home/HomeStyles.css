@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.center {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.section {
+    width: 90%;
+    border-radius: 20%;
+    margin: auto;
+}
+
+.section img {
+    height: 650px;
+    width: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    filter: brightness(50%)
+}
+
+.cButton, .banner-button{
+    padding: 10px;
+    color: white;
+    background-color: #E87461;
+    border: none;
+    border-radius: 12px;
+}
+
+.cButton:hover, .banner-button:hover{
+    color:#E87461;
+    background-color: #ffffff;
+    box-shadow: 10px 10px #E87461;
+}
+
+
+.article-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    column-gap: 60px;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.article-container h2 {
+    color:#E87461;
+}
+
+.Carousel-section {
+    height: 200px;
+    width: 300px;
+    justify-content: left;
+    margin-bottom: 300px;
+}
+
+.banner-container {
+    background-color: #380e4a;
+    width: 90%;
+    margin: auto;
+    border-radius: 8px 8px 8px 250px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 30px;
+}
+
+.image-banner {
+    display: grid;
+}
+
+.banner-img {
+    width: 900px;
+    height: auto;
+    /* border-radius: 8px; */
+    border-radius: 8px 250px 8px 250px;
+}
+
+.info-banner {
+    display: grid;
+    color: white;
+}
+
+.banner-button {
+    font-size: 25px;
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.info-banner h2 {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 200px;
+    font-size: 50px;
+}
+
+@media only screen and (max-width: 950px) {
+    .section img {
+      height: 200px;
+      width: auto;
+    }
+
+    .Carousel-section {
+        margin: auto;
+    }
+
+    p {
+        font-size: 8px;
+    }
+
+    h2 { 
+        font-size: 10px;
+    }
+
+    button {
+        padding: 5px;
+    }
+
+    .article-container {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(4, auto);
+    }
+
+}
+
+@media only screen and (max-width: 1400px) {
+    .banner-container {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: (2, auto);
+        border-radius: 8px;
+    }
+    .banner-img {
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .info-banner h2 {
+        margin-top: 30px;
+    }
+
+    .banner-button {
+        margin-top: 20px;
+    }
+}
