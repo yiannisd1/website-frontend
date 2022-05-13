@@ -1,6 +1,6 @@
 import React from "react";
 import "./HomeStyles.css"
-import Carousell from "./Carousel";
+import Carousell from "./carousel";
 import Article from "./Article";
 import Banner from "./Banner";
 

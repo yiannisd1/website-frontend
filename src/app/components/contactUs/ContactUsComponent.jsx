@@ -53,10 +53,10 @@ export default function ContactUsComponent() {
 			  <Typography gutterBottom variant="h4" style={{fontFamily: "Bodoni Moda",fontSize: "40",color:"#FFFFFF"}} >
             Contact Us
           </Typography>
-          <Typography gutterBottom variant="h6" style={{marginTop:"40px"}} >
+          <Typography gutterBottom variant="h6" style={{marginTop:"40px",color:"#FFFFFF"}} >
             Redback Operation
           </Typography>
-          <Typography gutterBottom variant="h6" style={{marginTop:"40px"}} >
+          <Typography gutterBottom variant="h6" style={{marginTop:"40px",color:"#FFFFFF"}} >
            admin@mail.com
           </Typography>
 				</Grid>
