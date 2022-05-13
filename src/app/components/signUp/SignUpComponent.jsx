@@ -61,7 +61,7 @@ export default function  SignUpComponent() {
     },
   });
   return (
-    <div className="Signup">
+    <div className="Signup" style={{marginTop:"-50px"}}>
       <header className="Signup-header">
         <form onSubmit={(e) => { handleSubmit(e) }}>
           <h2> RedBack SignUp Form</h2>
