@@ -59,9 +59,6 @@ export default function ContactUsComponent() {
           <Typography gutterBottom variant="h6" style={{marginTop:"40px"}} >
            admin@mail.com
           </Typography>
-          <Typography gutterBottom variant="h6" style={{marginTop:"40px"}} >
-            189 0000000
-          </Typography>
 				</Grid>
 				<Grid xs={6} item >
         <form>
