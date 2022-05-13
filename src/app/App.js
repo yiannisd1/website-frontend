@@ -9,6 +9,7 @@ import LoginComponent from "./components/login/LoginComponent";
 import OurTeamComponent from "./components/ourTeam/OurTeamComponent";
 import OurProjectComponent from "./components/ourProject/OurProjectComponent";
 import ContactUsComponent from "./components/contactUs/ContactUsComponent";
+import SignUpComponent from "./components/signUp/SignUpComponent";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/ourTeam" component={OurTeamComponent} />
         <Route path="/ourProject" component={OurProjectComponent} />
         <Route path="/contactUs" component={ContactUsComponent} />
+        <Route path="/signUp" component={SignUpComponent} />
       </Grid>
     </>
   );
