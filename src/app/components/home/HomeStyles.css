@@ -3,89 +3,171 @@
     margin: 0;
 }
 
-.center {
+.Home {
     width: 100%;
     height: 100%;
+    background-color: #380e4a;
     border: none;
 }
 
-.section {
-    width: 90%;
-    border-radius: 20%;
-    margin: auto;
+.heading-banner {
+    background-color: #834c8c;
+    height: 480px;
+    width: 100%;
 }
 
-.section img {
-    height: 650px;
-    width: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    filter: brightness(50%)
-}
-
-.cButton{
-    padding: 10px;
+.heading1, .heading2 {
+    font-size: 96px;
+    text-transform: uppercase;
+    text-align: center;
     color: white;
-    background-color: #E87461;
-    border: none;
-    border-radius: 12px;
+    text-shadow: white;
+    font-family: 'Rampart One', cursive;
 }
 
-.cButton:hover{
-    color:#E87461;
-    background-color: #ffffff;
-    box-shadow: 10px 10px #E87461;
+.heading1 {
+    padding-top: 80px;
+    margin-bottom: -30px;
+    padding-right: 180px;
 }
 
+.heading2 {
+    padding-left: 180px;
+}
 
-.article-container {
-    width: 90%;
-    margin: auto;
+.icon-grid {
+    font-size: 50px;
+    height: auto;
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    column-gap: 60px;
+    width: 100%;
     justify-content: center;
-    margin-top: 60px;
-    margin-bottom: 50px;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(1, 300px);
+    column-gap: 80px;
+    margin:auto;
 }
 
-.article-container h2 {
-    color:#E87461;
+.grid-object {
+    display: grid;
+    margin: 20px;
+    background-color: #e87461;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
 }
 
-.Carousel-section {
-    height: 200px;
+img {
+    height: 150px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.background {
+    background-color: white;
+}
+
+.redback-banner{
+    height: auto;
+    display: grid;
+    grid-template-columns: 500px 950px;
+    grid-template-rows: auto;
+    justify-content: center;
+    column-gap: 70px;
+    margin:auto;
+}
+
+
+.logo {
+    width: 500px;
+    height: auto;
+    padding: 100px 0;
+    padding-right: 75px;
+}
+
+.info h3 {
+    padding-bottom: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.info {
+    margin-top: 150px;
+    color: #380E4A;
+    font-size: 28px;
+}
+
+.directors-students-container {
+    width: 1450px;
+    height: auto;
+    margin: 60px auto;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.board-directors h3{
+    font-size: 48px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.directors-heading {
+    padding: 100px 0;
+}
+
+.students-heading {
+    padding: 100px 0;
+}
+
+.board-directors-members {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: auto;
+}
+
+.grid-directors h4 {
+    padding-top: 20px;
+    font-size: 20px;
+    color: #e87461;
+    text-align: center;
+}
+
+.student-directors-members {
+    display: grid;
+    grid-template-columns: repeat(2, 600px);
+    grid-template-rows: repeat(3, 300px);
+    column-gap: 150px;
+    justify-content: center;
+}
+
+.grid-students{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.grid-students h4{
+    font-size: 20px;
+    color: #e87461;
     width: 300px;
-    justify-content: left;
-    margin-bottom: 300px;
+    vertical-align: text-top;
+    padding-bottom: 50px;
 }
 
+.grid-students p {
+    width: 300px;
+    font-size: 18px;
+}
 
-@media only screen and (max-width: 950px) {
-    .section img {
-      height: 200px;
-      width: auto;
-    }
-
-    .Carousel-section {
-        margin: auto;
-    }
-
-    p {
-        font-size: 8px;
-    }
-
-    h2 { 
-        font-size: 10px;
-    }
-
-    button {
-        padding: 5px;
-    }
-
-    .article-container {
-        grid-template-columns: repeat(1, auto);
+@media only screen and (max-width: 1500px) {
+    .icon-grid{
+        column-gap: auto;
+        height: auto;
+        justify-content: center;
         grid-template-rows: repeat(4, auto);
+        grid-template-columns: repeat(1, 300px);
     }
-
 }

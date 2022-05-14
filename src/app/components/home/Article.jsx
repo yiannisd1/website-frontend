@@ -1,56 +1,19 @@
 import React from "react";
 import "./HomeStyles.css"
-
-import "bootstrap/dist/css/bootstrap.css";
+import logo from "./img/Logo.png"
 
 export default function Article() {
-  return (
-      <div className="article-container">
-          <div className="section1">
-            <h2>Article Heading</h2>
-            <p>
-            Quickly determine problems with crop growth through accurate sensor
-            readings, and provide communities with fresh and naturaly grown
-            resources that can be used to create ingredients and much more!
-            Quickly determine problems with crop growth through accurate sensor
-            readings, and provide communities with fresh and naturaly grown
-            resources that can be used to create ingredients and much more!
-            </p>
-          </div>
-          <div className="section2">
-          <h2>Article Heading</h2>
-            <p>
-            Quickly determine problems with crop growth through accurate sensor
-            readings, and provide communities with fresh and naturaly grown
-            resources that can be used to create ingredients and much more!
-            Quickly determine problems with crop growth through accurate sensor
-            readings, and provide communities with fresh and naturaly grown
-            resources that can be used to create ingredients and much more!
-            </p>
-          </div>
-          <div className="section3">
-          <h2>Article Heading</h2>
-            <p>
-            Quickly determine problems with crop growth through accurate sensor
-            readings, and provide communities with fresh and naturaly grown
-            resources that can be used to create ingredients and much more!
-            Quickly determine problems with crop growth through accurate sensor
-            readings, and provide communities with fresh and naturaly grown
-            resources that can be used to create ingredients and much more!
-            </p>
-          </div>
-          <div className="section4">
-          <h2>Article Heading</h2>
-            <p>
-            Quickly determine problems with crop growth through accurate sensor
-            readings, and provide communities with fresh and naturaly grown
-            resources that can be used to create ingredients and much more!
-            Quickly determine problems with crop growth through accurate sensor
-            readings, and provide communities with fresh and naturaly grown
-            resources that can be used to create ingredients and much more!
-            </p>
-          </div>
-
-      </div>
-  )
+    return (
+    <div className="background">
+        <div className="redback-banner">
+                <img className="logo" src={logo}/>
+                <div className="info">
+                    <h3>Welcome to Redback Operations</h3>
+                    <p>Redback Operations builds cutting-edge technologies for connected health, 
+                        fitness and sport to enable safe smart exercise. It is focused on providing 
+                        a community-driven exercise and well-being gaming experience with competitive elements. </p>
+                </div>
+            </div>
+        </div>
+    );
 }

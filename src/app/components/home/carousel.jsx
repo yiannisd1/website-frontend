@@ -1,59 +1,25 @@
 import React from "react";
 import "./HomeStyles.css"
-import { Carousel } from "react-bootstrap";
+import cycling from "./img/Cycling.png"
+import running from "./img/Running.png"
+import yoga from "./img/Yoga.png"
+import esports from "./img/E-Sports.png"
 
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function Carousell() {
   return (
-    <div className="section">
-      <Carousel>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src = "https://res.cloudinary.com/iconfitness/image/upload/dpr_3.0,f_auto,q_auto,w_500/v1/site--6/PFEX16718_1-01068.jpg"
-            alt="Second slide"
-          />
-          <Carousel.Caption className="Carousel-section">
-            <h2>Article Heading</h2>
-            <p>Quickly determine problems with crop growth through accurate sensor
-            readings, and provide communities with fresh and naturaly grown
-            resources that can be used to create ingredients and much more!</p>
-            <button className="cButton">Start Now!</button>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://www.mensjournal.com/wp-content/uploads/2018/02/home-workout.jpg?quality=86&strip=all"
-            alt="Third slide"
-          />
-
-          <Carousel.Caption className="Carousel-section">
-            <h2>Article Heading</h2>
-            <p>Quickly determine problems with crop growth through accurate sensor
-            readings, and provide communities with fresh and naturaly grown
-            resources that can be used to create ingredients and much more!</p>
-            <button className="cButton">Start Now!</button>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://www.sparkpeople.com/resize/100//blog_photos/main/BigImages/home_workout_header.png"
-            alt="Third slide"
-          />
-
-          <Carousel.Caption className="Carousel-section">
-            <h2>Article Heading</h2>
-            <p>Quickly determine problems with crop growth through accurate sensor
-            readings, and provide communities with fresh and naturaly grown
-            resources that can be used to create ingredients and much more!
-            </p>
-            <button className="cButton">Start Now!</button>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+    <>
+    <div className="heading-banner">
+      <p className="heading1">Exercise</p>
+      <p className = "heading2">Everyday</p>
     </div>
+    <div className="icon-grid">
+      <div className="grid-object"><img src = {running}/><p>Running</p></div>
+      <div className="grid-object"><img src = {yoga}/><p>Yoga</p></div>
+      <div className="grid-object"><img src = {cycling}/><p>Cycling</p></div>
+      <div className="grid-object"><img src = {esports}/><p>E-Sports</p></div>
+    </div>
+    </>
   );
 }
