@@ -1,55 +1,92 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import "./LoginStyles.css"
-import {  styled } from '@mui/material/styles';
-import { Link } from 'react-router-dom'
-
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Grid from "@mui/material/Grid";
+import "./LoginStyles.css";
+import { styled } from "@mui/material/styles";
+import agent from "../../proxy/userService";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import "./LoginStyles.css";
 
 export default function LoginComponent() {
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+  const history = useHistory();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  function handleSubmit(event) {
-    event.preventDefault();
-}
-const CssTextField = styled(TextField)({
-  '& label.Mui-focused': {
-    color: 'white',
-  },
-  '& .MuiInput-underline:after': {
-    borderBottomColor: 'white',
-  },
-  '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: 'white',
+  const CssTextField = styled(TextField)({
+    "& label.Mui-focused": {
+      color: "white",
     },
-    '&:hover fieldset': {
-      borderColor: 'white',
+    "& .MuiInput-underline:after": {
+      borderBottomColor: "white",
     },
-    '&.Mui-focused fieldset': {
-      borderColor: 'white',
+    "& .MuiOutlinedInput-root": {
+      "& fieldset": {
+        borderColor: "white",
+      },
+      "&:hover fieldset": {
+        borderColor: "white",
+      },
+      "&.Mui-focused fieldset": {
+        borderColor: "white",
+      },
     },
-  },
-});
-return (
-  <div className="LoginComponent">
-    <div style={{ padding: 30 , color : 'white'}}>
-    <Grid
-      container
-      spacing={1}
-      direction={'column'}
-      justify={'center'}
-      alignItems={'center'}>
-      <h1>RedBack Login</h1>
-      <Form onSubmit={handleSubmit} >
-      
-      <Grid style={{ padding: 20 }} item xs={12} >
-        <Form.Group size="lg" controlId="email">
+  });
+
+  function handleClick() {
+    const userDetail = {
+      username: email,
+      password: password,
+    };
+    agent.UserAPI.login(userDetail).then((response) => {
+      sessionStorage.setItem("access_token", response["accessToken"]);
+      sessionStorage.setItem("refresh_token", response["refreshToken"]);
+      console.log(response);
+      history.push("welcome",[email]);
+    });
+  }
+
+  return (
+    <div className="LoginComponent">
+      <div style={{ padding: 30, color: "white" }}>
+        <Grid
+          container
+          spacing={1}
+          direction={"column"}
+          justify={"center"}
+          alignItems={"center"}
+        >
+          <h1>RedBack Login</h1>
+          <input
+            value={email}
+            placeholder="username"
+            onChange={(e) => setEmail(e.target.value)}
+          ></input>
+          <input
+            value={password}
+            placeholder="password"
+            onChange={(e) => setPassword(e.target.value)}
+          ></input>
+          <button
+            component={NavLink}
+            to="/ourProject"
+            onClick={() => handleClick()}
+          >
+            Submit
+          </button>
+          <div className="createprofile"> <Link style={{
+              color: "#FFFF",
+            }} 
+            to={"./signUp"}>  Create a profile </Link>
+        </div>
+          {/* <Form >
+     
+      <Grid style={{ padding: 20 }} item xs={12} > */}
+          {/* <Form.Group size="lg" controlId="email">
           <CssTextField label="Email"
             type="email"
             sx={{ "& label": { color: "white" } }}
@@ -61,6 +98,7 @@ return (
             value={email}
             fullWidth
             required
+            onChange={(e) => setEmail(e.target.value)}
             >
           </CssTextField>
         </Form.Group>
@@ -92,8 +130,10 @@ return (
               color: "#FFFF",
               padding: "10px 20px",
               fontSize: "15px"
+             
             }} 
-          fullWidth type="submit" disabled={!validateForm()}>
+           
+          fullWidth type="submit">
           Login
         </Button>
         <div className="createprofile"> <Link style={{
@@ -101,77 +141,15 @@ return (
             }} 
             to={"./signUp"}>  Create a profile </Link>
         </div>
+
+        <div>
+
+      
+        </div>
        </Grid>
-      </Form>
-    </Grid>
+      </Form> */}
+        </Grid>
+      </div>
     </div>
-  </div>
-);
-	function validateForm() {
-		return email.length > 0 && password.length > 0;
-	}
-
-	function handleSubmit(event) {
-		event.preventDefault();
-	}
-
-	return (
-		<div className="LoginComponent">
-			<div style={{ padding: 30, color: "white" }}>
-				<Grid
-					container
-					spacing={1}
-					direction={"column"}
-					justify={"center"}
-					alignItems={"center"}
-				>
-					<h1>RedBack Login</h1>
-					<Form onSubmit={handleSubmit}>
-						<Grid style={{ padding: 20 }} item xs={12}>
-							<Form.Group size="lg" controlId="email">
-								<TextField
-									label="Email"
-									type="email"
-									variant="standard"
-									sx={{ input: { color: "white" } }}
-									value={email}
-									onChange={(e) => setEmail(e.target.value)}
-								></TextField>
-							</Form.Group>
-						</Grid>
-
-						<Grid style={{ padding: 20 }} item xs={12}>
-							<Form.Group size="lg" controlId="password">
-								<TextField
-									label="Password"
-									autofocus
-									variant="standard"
-									sx={{ input: { color: "white" } }}
-									type="password"
-									value={password}
-									onChange={(e) => setPassword(e.target.value)}
-								></TextField>
-							</Form.Group>
-						</Grid>
-						<Grid style={{ padding: 20 }} item xs={12}>
-							<Button
-								style={{
-									borderRadius: 25,
-									backgroundColor: "#e87461",
-									color: "#FFFF",
-									padding: "10px 20px",
-									fontSize: "15px",
-								}}
-								fullWidth
-								type="submit"
-								disabled={!validateForm()}
-							>
-								Login
-							</Button>
-						</Grid>
-					</Form>
-				</Grid>
-			</div>
-		</div>
-	);
+  );
 }

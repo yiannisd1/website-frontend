@@ -11,6 +11,7 @@ import LoginComponent from "./components/login/LoginComponent";
 import OurTeamComponent from "./components/ourTeam/OurTeamComponent";
 import ContactUsComponent from "./components/contactUs/ContactUsComponent";
 import SignUpComponent from "./components/signUp/SignUpComponent";
+import WelcomeComponent from "./components/welcome/WelcomeComponent";
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/ourProject" component={OurProjectComponent} />
         <Route path="/contactUs" component={ContactUsComponent} />
         <Route path="/signUp" component={SignUpComponent} />
+        <Route path="/welcome" component={WelcomeComponent} />
       </Grid>
     </>
   );
