@@ -1,6 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { Grid } from "@mui/material";
+import { ToastProvider, useToasts } from 'react-toast-notifications';
 
 
 import HomepageComponent from "./components/home/HomeComponent";
@@ -15,7 +16,7 @@ import WelcomeComponent from "./components/welcome/WelcomeComponent";
 
 function App() {
 	return (
-		<>
+		<ToastProvider>
 			<NavBarComponent />
 
       <Grid style={{ marginTop: "1em" }}>
@@ -28,7 +29,7 @@ function App() {
         <Route path="/signUp" component={SignUpComponent} />
         <Route path="/welcome" component={WelcomeComponent} />
       </Grid>
-    </>
+    </ToastProvider>
   );
 }
 

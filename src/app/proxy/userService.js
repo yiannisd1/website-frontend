@@ -12,30 +12,28 @@ axios.interceptors.request.use(async (request) => {
     return request;
   }
 });
-// axios.interceptors.response.use(
-//   async (response) => {
-//     return response;
-//   },
-//   (error) => {
-//     if (error == undefined) return;
-//     const { status } = error.response;
-//     switch (status) {
-//       case 400:
-//         toast.error("Error");
-//       case 401:
-//         toast.error("unauthorised");
-//         break;
-//       case 404:
-//         toast.error("Not Found");
-//         break;
-//       case 500:
-//         toast.error("Server Error");
-//         break;
-//     }
+axios.interceptors.response.use(
+  async (response) => {
+    return response;
+  },
+  (error) => {
+    const { status } = error.response;
+    switch (status) {
+      case 400:
+        alert("Error");
+      case 401:
+        toast.error("unauthorised");
+      case 404:
+        alert("Not Found");
+        break;
+      case 500:
+        alert("Server Error");
+        break;
+    }
 
-//     return Promise.reject(error);
-//   }
-// );
+    return Promise.reject(error);
+  }
+);
 const responseBody = (response) => response.data;
 
 const requests = {
