@@ -3,6 +3,7 @@
     margin: 0;
 }
 
+
 .Home {
     width: 100%;
     height: 100%;
@@ -159,6 +160,58 @@ img {
 .grid-students p {
     width: 300px;
     font-size: 18px;
+}
+
+.user-info {
+    display: block;
+    margin: auto;
+    padding: 10px;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    transform: rotate(180deg);
+    color: #380e4a;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.user-details-data {
+    text-align: center;
+    color: #380e4a;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.user {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    text-align: center;
+    overflow: hidden;
+    position: fixed;
+    top: 300px;
+    left: -305px;
+    background: #e87461;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 380px;
+    padding: 25px;
+    height: auto;
+
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+.user textarea {
+    width: 190px;
+    height: 100px;
+    margin-bottom: 6px;
+}
+.user:hover {
+    left: 0;
+}
+.user:hover #slideout_inner {
+    left: 0;
 }
 
 @media only screen and (max-width: 1500px) {
