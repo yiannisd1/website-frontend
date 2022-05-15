@@ -12,6 +12,9 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Board from "./BoardDirectors";
+import MVGBanner from "./MVGComponent";
+import ProjectList from "./ProjectsComponent"
+import HomePageFooter from "./HomePageFooter";
 
 export default function HomepageComponent(props) {
   const location = useLocation();
@@ -66,6 +69,9 @@ export default function HomepageComponent(props) {
       <Carousell />
       <Article />
       <Board/>
+      <MVGBanner/> 
+      <ProjectList/> 
+      <HomePageFooter/>
     </div>
   );
 }

@@ -37,14 +37,14 @@
 }
 
 .icon-grid {
-    font-size: 50px;
+    font-size: 30px;
     height: auto;
     display: grid;
     width: 100%;
     justify-content: center;
-    grid-template-columns: repeat(4, 300px);
-    grid-template-rows: repeat(1, 300px);
-    column-gap: 80px;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(1, 200px);
+    column-gap: 120px;
     margin:auto;
 }
 
@@ -58,7 +58,7 @@
 }
 
 img {
-    height: 150px;
+    height: 100px;
     width: auto;
     display: block;
     margin-left: auto;
@@ -72,10 +72,10 @@ img {
 .redback-banner{
     height: auto;
     display: grid;
-    grid-template-columns: 500px 950px;
+    grid-template-columns: 400px 870px;
     grid-template-rows: auto;
+    column-gap: 20px;
     justify-content: center;
-    column-gap: 70px;
     margin:auto;
 }
 
@@ -83,24 +83,24 @@ img {
 .home-logo {
     width: 500px;
     height: auto;
-    padding: 100px 0;
+    padding: 60px 0;
     padding-right: 75px;
 }
 .info h3 {
     padding-bottom: 50px;
-    font-size: 40px;
+    font-size: 38px;
     font-weight: bold;
     text-align: center;
 }
 
 .info {
-    margin-top: 150px;
+    margin-top: 100px;
     color: #380E4A;
-    font-size: 28px;
+    font-size: 25px;
 }
 
 .directors-students-container {
-    width: 1450px;
+    width: 1100px;
     height: auto;
     margin: 60px auto;
     background-color: white;
@@ -138,9 +138,9 @@ img {
 
 .student-directors-members {
     display: grid;
-    grid-template-columns: repeat(2, 600px);
+    grid-template-columns: repeat(2, 450px);
     grid-template-rows: repeat(3, 300px);
-    column-gap: 150px;
+    column-gap: 120px;
     justify-content: center;
 }
 
@@ -214,7 +214,102 @@ img {
     left: 0;
 }
 
-@media only screen and (max-width: 1500px) {
+.mvg-container{
+    width: 90%;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3,300px);
+    grid-template-rows: auto;
+    column-gap: 100px;
+    justify-content: center;
+    padding: 20px;
+    margin: auto;
+}
+
+.mvg-grid h3{
+    font-weight: bold;
+    text-align: center;
+}
+
+.mvg-grid{
+    background-color: white;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.mvg-logos{
+    height: 100px;
+    width: auto;
+    display: block;
+    margin: auto;
+}
+
+.projects-container{
+    width: 1100px;
+    height: auto;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+.projects-container p{
+    width: auto;
+    display: block;
+    padding: 0px 325px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.footer-container{
+    background-color: #834c8c;
+}
+
+.footer-grid{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: 350px;
+    padding-top: 100px;
+}
+
+.footer-logo{
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.socials-logo img{
+    width: 80px;
+    height: auto;
+    margin-top: 60px;
+    margin-left: 0px;
+}
+
+.socials-logo{
+    border-left: 5px solid #e87461;
+    padding-left: 30px;
+    font-size: 32px;
+    color: white;
+}
+
+.socials-logo p{
+    margin-top: 10px;
+}
+
+.footer-msg{
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 0px;
+    padding-bottom: 40px;
+}
+
+@media only screen and (max-width: 1200px) {
     .icon-grid{
         column-gap: auto;
         height: auto;
