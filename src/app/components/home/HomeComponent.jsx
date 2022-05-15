@@ -34,31 +34,32 @@ export default function HomepageComponent(props) {
       <>
        
         {display  && (
-          <div>
-            <Card sx={{ minWidth: 275 }}>
+          <div className="user">
+            <Card sx={{ minWidth: 275 }} className="user-details-data">
               <CardContent>
-                <Typography
+                {/* <Typography
                   sx={{ fontSize: 14 }}
                   color="text.secondary"
                   gutterBottom
                 >
                   Email -{userDetail.email}
-                </Typography>
+                </Typography> */}
                 <Typography variant="h5" component="div">
-                  Welcome User {userDetail.firstname} {userDetail.lastname}
+                  Welcome {userDetail.firstname} {userDetail.lastname}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">
                   LastName -{userDetail.lastname}
-                </Typography>
-                <Typography variant="body2">
+                </Typography> */}
+                <Typography variant="body2" className="user-details-text">
                   Your user level is {userDetail.userLevel}
                   <br />
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                {/* <Typography sx={{ mb: 1.5 }} color="text.secondary">
                   Your phone number is {userDetail.telephone}
-                </Typography>
+                </Typography> */}
               </CardContent>
             </Card>
+            <h3 className="user-info">User Details</h3>
           </div>
         )}
       </>
