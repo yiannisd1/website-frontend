@@ -35,7 +35,7 @@ export default function HomepageComponent(props) {
        
         {display  && (
           <div className="user">
-            <Card sx={{ minWidth: 275 }}>
+            <Card sx={{ minWidth: 275 }} className="user-details-data">
               <CardContent>
                 {/* <Typography
                   sx={{ fontSize: 14 }}
