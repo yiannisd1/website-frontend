@@ -1,0 +1,25 @@
+@media all and (min-width: 480px) {
+    .Login {
+      padding: 60px 0;
+    }
+  
+    .Login form {
+      margin: 0 auto;
+      max-width: 320px;
+    }
+
+    .TextField{
+      color: rgb(255, 255, 255);
+    }
+  }
+
+  .contactUs-center {
+    margin: auto;
+    width: 50%;
+    margin-top:200px;
+    padding: 10px;
+    text-decoration: white;
+  }
+  .createprofile{
+    text-align: center;
+  }

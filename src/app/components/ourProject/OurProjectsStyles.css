@@ -1,0 +1,106 @@
+/* Create two equal columns that floats next to each other */
+* {
+  box-sizing: border-box;
+}
+/* use to styling the content container*/
+.container{
+  width: 1440px;
+  position: absolute;
+}
+.column {
+    float: left;
+    width: 50%;
+    background-color: aqua;
+    text-align: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    background-color: aquamarine;
+    text-align: center;
+  }
+
+.OurProjectsHeading {
+  position: absolute;
+  width: 567px;
+  height: 116px;
+  left: 133px;
+  top: 305px;
+  font-family: 'Bodoni Moda';
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 98px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.OurProjectsDetail {
+  position: absolute;
+  width: 555px;
+  height: 480px;
+  left: 133px;
+  top: 440px;
+  font-family: 'RobotoFlex';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  /* or 167% */
+  color: #FFFFFF;
+}
+
+.Rectangle1 {
+  position: absolute;
+  width: 520px;
+  height: 306px;
+  left: 858px;
+  top: 287px;
+
+  background: #132B47;
+  opacity: 0.5;
+}
+
+.HeadsetImg {
+  position: absolute;
+  width: 541px;
+  height: 322px;
+  left: 766px;
+  top: 330px;
+  background: url(../../../assets/headset.png);
+}
+.ProjectDetail1{
+  position: absolute;
+  width: 558px;
+  height: 422px;
+  left: 764px;
+  top: 694px;
+}
+.ProjectDetail1 p{
+  font-family: 'Roboto Flex';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+ /* or 167% */
+  color: #FFFFFF; 
+}
+.Rectangle2{
+  position: absolute;
+  width: 1440px;
+  height: 284px;
+  left: 0px;
+  top: 920px;
+  
+  background: #96695F;
+}
+.Img2{
+  position: absolute;
+  width: 725px;
+  height: 551px;
+  margin-left: 80px;
+  top: 850px;
+  background: url(../../../assets/Img2.png);
+}
