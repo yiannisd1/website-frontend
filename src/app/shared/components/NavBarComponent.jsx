@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import React, { useState, useEffect, useContext } from "react";
-import Context from "../../../context";
+import React, { useContext } from "react";
+import Context from "../../stores/context";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -18,13 +18,9 @@ const NavBarComponent = () => {
   const history = useHistory();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  // const [isLoggedIn, setLoggedIn] = useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
@@ -35,19 +31,8 @@ const NavBarComponent = () => {
     setAnchorElUser(null);
   };
 
-  useEffect(() => {
-    var result = sessionStorage.getItem("username");
-    if (sessionStorage.getItem("username") != null) {
-      // dispatch({ type: "SignIn" });
-    }
-    if (sessionStorage.getItem("username") == null) {
-      // dispatch({ type: "SignOut" });
-    }
-  }, [anchorElNav, anchorElUser, sessionStorage.getItem("username")]);
-
   const handleLogout = () => {
-    globalDispatch({ type: "LOGOUT" })
-    // dispatch({ type: "SignOut" });
+    globalDispatch({ type: "LOGOUT" });
     sessionStorage.removeItem("username");
     history.push("/loginIn");
   };
@@ -71,7 +56,7 @@ const NavBarComponent = () => {
         >
           <NavLink to="/">
             <div className="half-circle">
-              <img className="logo" src={image} />
+              <img className="logo" src={image} alt="img" />
             </div>
           </NavLink>
         </Typography>
@@ -185,7 +170,7 @@ const NavBarComponent = () => {
             textDecoration: "none",
           }}
         >
-          <img className="logo1 circle" src={image} />
+          <img className="logo1 circle" type="image" src={image} />
         </Typography>
         <Typography
           variant="h6"
@@ -204,7 +189,6 @@ const NavBarComponent = () => {
               borderRadius: 10,
               backgroundColor: "#E87461",
               padding: "18px 36px",
-              fontSize: "4px",
               fontSize: "1vw",
             }}
             variant="contained"
@@ -221,7 +205,6 @@ const NavBarComponent = () => {
               borderRadius: 10,
               backgroundColor: "#E87461",
               padding: "18px 36px",
-              fontSize: "4px",
               fontSize: "1vw",
             }}
             variant="contained"
@@ -239,7 +222,6 @@ const NavBarComponent = () => {
               borderRadius: 10,
               backgroundColor: "#E87461",
               padding: "18px 36px",
-              fontSize: "4px",
               fontSize: "1vw",
             }}
             variant="contained"
@@ -257,7 +239,6 @@ const NavBarComponent = () => {
               borderRadius: 10,
               backgroundColor: "#E87461",
               padding: "18px 36px",
-              fontSize: "4px",
               fontSize: "1vw",
             }}
             variant="contained"
@@ -275,7 +256,6 @@ const NavBarComponent = () => {
               borderRadius: 10,
               backgroundColor: "#E87461",
               padding: "18px 36px",
-              fontSize: "5px",
               fontSize: "1vw",
             }}
             size="large"
@@ -296,7 +276,6 @@ const NavBarComponent = () => {
                 borderRadius: 10,
                 backgroundColor: "#E87461",
                 padding: "18px 36px",
-                fontSize: "4px",
                 fontSize: "1vw",
               }}
               sx={{
@@ -318,7 +297,6 @@ const NavBarComponent = () => {
                 borderRadius: 10,
                 backgroundColor: "#E87461",
                 padding: "18px 36px",
-                fontSize: "4px",
                 fontSize: "1vw",
               }}
               sx={{

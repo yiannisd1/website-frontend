@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
-import Context from "../../../context"
+import Context from "../../stores/context"
 
 import "./LoginStyles.css";
 
