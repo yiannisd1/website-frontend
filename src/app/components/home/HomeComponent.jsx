@@ -30,7 +30,7 @@ export default function HomepageComponent(props) {
     }
   }, []);
   return (
-    <div className="center">
+    <div>
       <>
        
         {display  && (

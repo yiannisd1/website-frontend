@@ -6,7 +6,7 @@ export default function Article() {
     return (
     <div className="background">
         <div className="redback-banner">
-                <img className="logo" src={logo}/>
+                <img className="home-logo" src={logo}/>
                 <div className="info">
                     <h3>Welcome to Redback Operations</h3>
                     <p>Redback Operations builds cutting-edge technologies for connected health, 
