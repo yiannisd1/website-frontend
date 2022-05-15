@@ -1,8 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { Grid } from "@mui/material";
-import { ToastProvider, useToasts } from 'react-toast-notifications';
-
 
 import HomepageComponent from "./components/home/HomeComponent";
 import NavBarComponent from "./shared/components/NavBarComponent";
@@ -13,11 +11,12 @@ import OurTeamComponent from "./components/ourTeam/OurTeamComponent";
 import ContactUsComponent from "./components/contactUs/ContactUsComponent";
 import SignUpComponent from "./components/signUp/SignUpComponent";
 import WelcomeComponent from "./components/welcome/WelcomeComponent";
+import GlobalStateProvider from "../GlobalStateProvider";
 
 function App() {
-	return (
-		<ToastProvider>
-			<NavBarComponent />
+  return (
+    <GlobalStateProvider>
+      <NavBarComponent />
 
       <Grid style={{ marginTop: "1em" }}>
         <Route exact path="/" component={HomepageComponent} />
@@ -29,7 +28,7 @@ function App() {
         <Route path="/signUp" component={SignUpComponent} />
         <Route path="/welcome" component={WelcomeComponent} />
       </Grid>
-    </ToastProvider>
+    </GlobalStateProvider>
   );
 }
 

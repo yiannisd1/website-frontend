@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -9,10 +8,13 @@ import agent from "../../proxy/userService";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import Context from "../../../context"
 
 import "./LoginStyles.css";
 
-export default function LoginComponent() {
+export default function LoginComponent(props) {
+  const { globalState, globalDispatch } = useContext(Context);
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -45,8 +47,9 @@ export default function LoginComponent() {
     agent.UserAPI.login(userDetail).then((response) => {
       sessionStorage.setItem("access_token", response["accessToken"]);
       sessionStorage.setItem("refresh_token", response["refreshToken"]);
-      console.log(response);
-      history.push("welcome",[email]);
+      sessionStorage.setItem("username", email);
+      globalDispatch({ type: "LOGIN" });
+      history.push("/");
     });
   }
 
@@ -71,18 +74,21 @@ export default function LoginComponent() {
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
           ></input>
-          <button
-            component={NavLink}
-            to="/ourProject"
-            onClick={() => handleClick()}
-          >
+          <button component={NavLink} to="/" onClick={() => handleClick()}>
             Submit
           </button>
-          <div className="createprofile"> <Link style={{
-              color: "#FFFF",
-            }} 
-            to={"./signUp"}>  Create a profile </Link>
-        </div>
+          <div className="createprofile">
+            {" "}
+            <Link
+              style={{
+                color: "#FFFF",
+              }}
+              to={"./signUp"}
+            >
+              {" "}
+              Create a profile{" "}
+            </Link>
+          </div>
           {/* <Form >
      
       <Grid style={{ padding: 20 }} item xs={12} > */}

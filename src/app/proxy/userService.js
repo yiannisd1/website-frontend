@@ -5,7 +5,7 @@ axios.defaults.baseURL = "http://localhost:8080";
 
 axios.interceptors.request.use(async (request) => {
   if (request) {
-    let value = JSON.stringify(sessionStorage.getItem("access_token"));
+    let value = JSON.stringify(window.sessionStorage.getItem("access_token"));
     let token = JSON.parse(value);
     request.headers.authorization = `Bearer ${token}`;
     // request.headers["Content-Type"] = "application/json";
@@ -49,7 +49,7 @@ const UserAPI = {
   login: (body) => requests.post(`/login`, body),
   create: (body) => requests.post("/signup", body),
   //update: (userDetail) => requests.put(`signup/${id}`, userDetail),
-  logout: (id) => requests.del(`/logout`, {}),
+  logout: (refreshToken) => requests.del(`/logout`, refreshToken),
 };
 
 const agent = {
