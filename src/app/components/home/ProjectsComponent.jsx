@@ -8,7 +8,7 @@ export default function ProjectBanner() {
     <div className="projects-container">
         <h2>List of Our Projects</h2>
             {data.projects.map((test)=> {
-                return <p key={data.projects.number} className="project-names">Project {test.number}: {test.name}</p> 
+                return <div key={data.projects.number} className="project-names"><p className="project-number">Project {test.number}: </p> <p className="project-title">{test.name}</p></div> 
             })}
     </div>
     )
