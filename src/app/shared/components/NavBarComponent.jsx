@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import * as React from "react";
+import React, { useContext } from "react";
+import Context from "../../stores/context";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -10,49 +11,54 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import image from "../../../../src/assets/logo-redback.png";
+import { useHistory } from "react-router-dom";
 
 const NavBarComponent = () => {
-	const [anchorElNav, setAnchorElNav] = React.useState(null);
-	const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const { globalState, globalDispatch } = useContext(Context);
+  const history = useHistory();
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-	const handleOpenNavMenu = (event) => {
-		setAnchorElNav(event.currentTarget);
-	};
-	const handleOpenUserMenu = (event) => {
-		setAnchorElUser(event.currentTarget);
-	};
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
 
-	const handleCloseNavMenu = () => {
-		setAnchorElNav(null);
-	};
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
 
-	const handleCloseUserMenu = () => {
-		setAnchorElUser(null);
-	};
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  const handleLogout = () => {
+    globalDispatch({ type: "LOGOUT" });
+    sessionStorage.removeItem("username");
+    history.push("/loginIn");
+  };
 
   return (
-    
     <Container maxWidth="x">
       <Toolbar
         disableGutters
         style={{ position: "relative", paddingRight: "20px" }}
       >
-         <Typography
-           sx={{
+        <Typography
+          sx={{
             mr: 2,
-            display: { xs: 'none', md: 'flex' },
-            fontFamily: 'monospace',
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
             fontWeight: 700,
-            letterSpacing: '.3rem',
-            color: 'inherit',
-            textDecoration: 'none',
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
           }}
-         >
-        <NavLink to="/">
-          <div className="half-circle">
-            <img className="logo" src={image} />
-          </div>
-        </NavLink>
+        >
+          <NavLink to="/">
+            <div className="half-circle">
+              <img className="logo" src={image} alt="img" />
+            </div>
+          </NavLink>
         </Typography>
         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
           <IconButton
@@ -63,7 +69,7 @@ const NavBarComponent = () => {
             onClick={handleOpenNavMenu}
             color="inherit"
           >
-            <MenuIcon style={{color:"white" }} />
+            <MenuIcon style={{ color: "white" }} />
           </IconButton>
           <Menu
             id="menu-appbar"
@@ -80,7 +86,7 @@ const NavBarComponent = () => {
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
             sx={{
-              display: { xs: "block", md: "none",color: "white"},
+              display: { xs: "block", md: "none", color: "white" },
             }}
           >
             <MenuItem onClick={handleCloseNavMenu}>
@@ -149,25 +155,23 @@ const NavBarComponent = () => {
           </Menu>
         </Box>
         <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-           
-            <img className="logo1 circle" src={image} />
-         
-          </Typography>
+          variant="h5"
+          noWrap
+          component="a"
+          href=""
+          sx={{
+            mr: 2,
+            display: { xs: "flex", md: "none" },
+            flexGrow: 1,
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
+          <img className="logo1 circle" type="image" src={image} />
+        </Typography>
         <Typography
           variant="h6"
           noWrap
@@ -179,13 +183,12 @@ const NavBarComponent = () => {
           component={NavLink}
           to="/"
         ></Typography>
-         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           <Button
             style={{
               borderRadius: 10,
               backgroundColor: "#E87461",
               padding: "18px 36px",
-              fontSize: "4px",
               fontSize: "1vw",
             }}
             variant="contained"
@@ -202,7 +205,6 @@ const NavBarComponent = () => {
               borderRadius: 10,
               backgroundColor: "#E87461",
               padding: "18px 36px",
-              fontSize: "4px",
               fontSize: "1vw",
             }}
             variant="contained"
@@ -220,7 +222,6 @@ const NavBarComponent = () => {
               borderRadius: 10,
               backgroundColor: "#E87461",
               padding: "18px 36px",
-              fontSize: "4px",
               fontSize: "1vw",
             }}
             variant="contained"
@@ -238,7 +239,6 @@ const NavBarComponent = () => {
               borderRadius: 10,
               backgroundColor: "#E87461",
               padding: "18px 36px",
-              fontSize: "4px",
               fontSize: "1vw",
             }}
             variant="contained"
@@ -256,7 +256,6 @@ const NavBarComponent = () => {
               borderRadius: 10,
               backgroundColor: "#E87461",
               padding: "18px 36px",
-              fontSize: "5px",
               fontSize: "1vw",
             }}
             size="large"
@@ -270,26 +269,49 @@ const NavBarComponent = () => {
             Contact Us
           </Button>
 
-          <Button
-            variant="contained"
-            style={{
-              borderRadius: 10,
-              backgroundColor: "#E87461",
-              padding: "18px 36px",
-              fontSize: "4px",
-              fontSize: "1vw",
-            }}
-            sx={{
-              mx: 8,
-              color: "white",
-              display: "block",
-            }}
-            exact
-            component={NavLink}
-            to="/loginIn"
-          >
-            Login
-          </Button>
+          {globalState.isLoggedIn ? (
+            <Button
+              variant="contained"
+              style={{
+                borderRadius: 10,
+                backgroundColor: "#E87461",
+                padding: "18px 36px",
+                fontSize: "1vw",
+              }}
+              sx={{
+                mx: 8,
+                color: "white",
+                display: "block",
+              }}
+              exact
+              component={NavLink}
+              to="/login"
+              onClick={handleLogout}
+            >
+              SignOut
+            </Button>
+          ) : (
+            <Button
+              variant="contained"
+              style={{
+                borderRadius: 10,
+                backgroundColor: "#E87461",
+                padding: "18px 36px",
+                fontSize: "1vw",
+              }}
+              sx={{
+                mx: 8,
+                color: "white",
+                display: "block",
+              }}
+              exact
+              component={NavLink}
+              to="/loginIn"
+              // onClick={() => globalDispatch({ type: "LOGIN" })}
+            >
+              SignIn
+            </Button>
+          )}
         </Box>
 
         <Box sx={{ flexGrow: 0 }}>

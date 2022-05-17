@@ -1,73 +1,69 @@
 import React from "react";
-import {
-  Grid,
-  TextField,
-  Button,
-
-  Typography,
-  
-} from "@mui/material";
+import { Grid, TextField, Button, Typography } from "@mui/material";
 
 import "./ContactUs.css";
-import "@fontsource/bodoni-moda"; 
+import "@fontsource/bodoni-moda";
 
-import {
-  createStyles,
-  fade,
-  Theme,
-  withStyles,
-  makeStyles,
-  createMuiTheme,
-} from '@material-ui/core/styles';
-
+import { withStyles } from "@material-ui/core/styles";
 
 export default function ContactUsComponent() {
-
   const CssTextField = withStyles({
     root: {
-      '& label.Mui-focused': {
-        color: 'white',
+      "& label.Mui-focused": {
+        color: "white",
       },
-      '& .MuiInput-underline:after': {
-        borderBottomColor: 'yellow',
+      "& .MuiInput-underline:after": {
+        borderBottomColor: "yellow",
       },
-      '& .MuiOutlinedInput-root': {
-        '& fieldset': {
-          borderColor: 'white',
+      "& .MuiOutlinedInput-root": {
+        "& fieldset": {
+          borderColor: "white",
         },
-        '&:hover fieldset': {
-          borderColor: 'white',
+        "&:hover fieldset": {
+          borderColor: "white",
         },
-        '&.Mui-focused fieldset': {
-          borderColor: 'yellow',
+        "&.Mui-focused fieldset": {
+          borderColor: "yellow",
         },
       },
     },
   })(TextField);
- 
 
   return (
     <div className="contactUs-center">
-      	<Grid container>
-				<Grid item style={{ flexGrow: "1" }}>
-			  <Typography gutterBottom variant="h4" style={{fontFamily: "Bodoni Moda",fontSize: "40",color:"#FFFFFF"}} >
+      <Grid container>
+        <Grid item style={{ flexGrow: "1" }}>
+          <Typography
+            gutterBottom
+            variant="h4"
+            style={{
+              fontFamily: "Bodoni Moda",
+              fontSize: "40",
+              color: "#FFFFFF",
+            }}
+          >
             Contact Us
           </Typography>
-          <Typography gutterBottom variant="h6" style={{marginTop:"40px"}} >
+          <Typography
+            gutterBottom
+            variant="h6"
+            style={{ marginTop: "40px", color: "#FFFFFF" }}
+          >
             Redback Operation
           </Typography>
-          <Typography gutterBottom variant="h6" style={{marginTop:"40px"}} >
-           admin@mail.com
+          <Typography
+            gutterBottom
+            variant="h6"
+            style={{ marginTop: "40px", color: "#FFFFFF" }}
+          >
+            admin@mail.com
           </Typography>
-          <Typography gutterBottom variant="h6" style={{marginTop:"40px"}} >
-            189 0000000
-          </Typography>
-				</Grid>
-				<Grid xs={6} item >
-        <form>
+        </Grid>
+        <Grid xs={6} item>
+          <form>
             <Grid container spacing={1}>
               <Grid xs={12} sm={12} item>
-                <CssTextField      
+                <CssTextField
                   sx={{ "& label": { color: "white" } }}
                   inputProps={{
                     style: { color: "white" },
@@ -81,11 +77,11 @@ export default function ContactUsComponent() {
               </Grid>
               <Grid item xs={12}>
                 <CssTextField
-                  sx={{ "& label": { color: "white" }}}
+                  sx={{ "& label": { color: "white" } }}
                   inputProps={{
                     style: { color: "white" },
                   }}
-                  style={{"borderColor":"#62656A"}}
+                  style={{ borderColor: "#62656A" }}
                   type="email"
                   placeholder="Enter email"
                   label="Email"
@@ -100,7 +96,6 @@ export default function ContactUsComponent() {
                   inputProps={{
                     style: { color: "white" },
                   }}
-                
                   type="number"
                   placeholder="Enter phone number"
                   label="Phone"
@@ -127,13 +122,12 @@ export default function ContactUsComponent() {
               </Grid>
               <Grid item xs={3}>
                 <Button
-                 style={{
-                  borderRadius: 0,
-                  backgroundColor: "white",
-                  color: "black",
-                  margin:"5px",
-
-              }}
+                  style={{
+                    borderRadius: 0,
+                    backgroundColor: "white",
+                    color: "black",
+                    margin: "5px",
+                  }}
                   type="submit"
                   variant="contained"
                   color="primary"
@@ -144,9 +138,8 @@ export default function ContactUsComponent() {
               </Grid>
             </Grid>
           </form>
-				</Grid>
-			</Grid>
-   
+        </Grid>
+      </Grid>
     </div>
   );
 }
