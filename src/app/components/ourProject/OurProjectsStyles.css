@@ -7,76 +7,86 @@
   width: 1440px;
   position: absolute;
 }
-.column {
-    float: left;
-    width: 50%;
-    background-color: aqua;
-    text-align: center;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-    background-color: aquamarine;
-    text-align: center;
-  }
 
-.OurProjectsHeading {
-  position: absolute;
-  width: 567px;
-  height: 116px;
-  left: 133px;
-  top: 305px;
+
+
+
+
+.Project-Content-Container{
+    width: 1440px;
+    height: auto;
+    margin: 200px auto;
+}
+.ProjectContent{
+    display: grid;
+    grid-template-columns: repeat(2, 550px);
+    grid-template-rows: auto;
+    column-gap: 120px;
+    justify-content: center;
+}
+.grid-project{
   font-family: 'Bodoni Moda';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 61px;
+  color: #BC5A5B;
+}
+.grid-description{
+  font-family: 'Roboto Flex';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+.Content{ 
+  height: auto;
+  display: grid;
+  grid-template-columns: 550px 700px;
+  grid-template-rows: auto;
+  column-gap: 40px;
+  justify-content: center;
+  margin: auto;
+  margin-left: 5%;
+}
+.InfoContent h1{
+  font-family: 'Bodoni Moda';
+  font-style: normal;
   font-weight: 400;
   font-size: 64px;
   line-height: 98px;
   text-transform: uppercase;
   color: #FFFFFF;
 }
-
-.OurProjectsDetail {
-  position: absolute;
-  width: 555px;
-  height: 480px;
-  left: 133px;
-  top: 440px;
-  font-family: 'RobotoFlex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-  color: #FFFFFF;
+.InfoContent p{
+  font-family: 'Roboto Flex';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 30px;
+color: #FFFFFF;
 }
-
-.Rectangle1 {
-  position: absolute;
-  width: 520px;
-  height: 306px;
-  left: 858px;
-  top: 287px;
-
-  background: #132B47;
-  opacity: 0.5;
+.ImgDisplay {
+ margin-left: 100px;
 }
-
-.HeadsetImg {
-  position: absolute;
-  width: 541px;
-  height: 322px;
-  left: 766px;
-  top: 330px;
-  background: url(../../../assets/headset.png);
+.Content1{
+  margin: 5% auto;
+  height: auto;
+  display: grid;
+  grid-template-columns: 550px 700px;
+  grid-template-rows: auto;
+  column-gap: 40px;
+  justify-content: center;
+  background-color: #96695F;
+  width: 100%;
+  height: 284px;
 }
-.ProjectDetail1{
-  position: absolute;
-  width: 558px;
-  height: 422px;
-  left: 764px;
-  top: 694px;
+.Img2{
+  width: 725px;
+  height: 551px;
+  top: 850px;
+  background: url(../../../assets/Img2.png);
 }
 .ProjectDetail1 p{
   font-family: 'Roboto Flex';
@@ -87,465 +97,22 @@
  /* or 167% */
   color: #FFFFFF; 
 }
-.Rectangle2{
-  position: absolute;
-  width: 1440px;
-  height: 284px;
-  left: 0px;
-  top: 920px;
-  
-  background: #96695F;
+.ProjectDetail1{
+  margin-top: -5%;
+  width: 558px;
+  height: 422px;
 }
-.Img2{
-  position: absolute;
-  width: 725px;
-  height: 551px;
-  margin-left: 80px;
-  top: 850px;
-  background: url(../../../assets/Img2.png);
+.Rectangle1 {
+  position: relative;
+  width: 520px;
+  height: 306px;
+  background: #132B47;
+  opacity: 0.5;
 }
 
-.Project1Title {
-  position: absolute;
+.HeadsetImg {
   width: 541px;
-  height: 124px;
-  left: 118px;
-  top: 1356px;
-
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-
-  color: #BC5A5B;
-}
-
-.Project1Detail {
-  position: absolute;
-  width: 568px;
-  height: 383px;
-  left: 105px;
-  top: 1494px;
-
-  /* Body 1 */
-
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-
-
-  color: #FFFFFF;
-}
-
-.Project2Title {
-  position: absolute;
-  width: 541px;
-  height: 124px;
-  left: 755px;
-  top: 1356px;
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-  color: #BC5A5B;
-}
-
-.Project2Detail {
-  position: absolute;
-  width: 568px;
-  height: 383px;
-  left: 753px;
-  top: 1494px;
-  /* Body 1 */
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-  color: #FFFFFF;
-}
-
-.Project3Title {
-  position: absolute;
-  width: 541px;
-  height: 124px;
-  left: 122px;
-  top: 1978px;
-
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-
-  color: #BC5A5B;
-}
-
-.Project3Detail {
-  position: absolute;
-  width: 568px;
-  height: 383px;
-  left: 120px;
-  top: 2116px;
-  /* Body 1 */
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-  color: #FFFFFF;
-}
-
-.Project4Title {
-  position: absolute;
-  width: 541px;
-  height: 124px;
-  left: 755px;
-  top: 1978px;
-
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-
-  color: #BC5A5B;
-}
-
-.Project4Detail {
-  position: absolute;
-  width: 568px;
-  height: 383px;
-  left: 753px;
-  top: 2116px;
-  /* Body 1 */
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-  color: #FFFFFF;
-}
-
-.BasketballImg {
-  position: absolute;
-  width: 541px;
-  height: 608px;
-  left: 769px;
-  top: 2513px;
-  background: url(../../../assets/basketball.png);
-}
-
-.BasketballBackground {
-  position: absolute;
-  width: 476px;
-  height: 601px;
-  left: 964px;
-  top: 2587px;
-
-  background: #834C8C;
-}
-
-.Rectangle3 {
-  position: absolute;
-  width: 30px;
-  height: 168px;
-  left: 0px;
-  top: 3223px;
-
-  background: #4C8C81;
-}
-
-.Project5Title {
-  position: absolute;
-  width: 541px;
-  height: 124px;
-  left: 122px;
-  top: 3223px;
-  
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-  
-  color: #BC5A5B;
-}
-
-.Project5Detail {
-  position: absolute;
-  width: 568px;
-  height: 383px;
-  left: 120px;
-  top: 3361px;
-  /* Body 1 */
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-  color: #FFFFFF;
-}
-
-.Project6Title {
-  position: absolute;
-  width: 541px;
-  height: 124px;
-  left: 755px;
-  top: 3329px;
-  
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-  
-  color: #BC5A5B;
-}
-
-.Project6Detail {
-  position: absolute;
-  width: 568px;
-  height: 383px;
-  left: 753px;
-  top: 3467px;
-  /* Body 1 */
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */  
-  color: #FFFFFF;
-}
-
-.Project7Title {
-  position: absolute;
-  width: 541px;
-  height: 124px;
-  left: 122px;
-  top: 3845px;
-  
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-  
-  color: #BC5A5B;
-}
-
-.Project7Detail {
-  position: absolute;
-  width: 568px;
-  height: 383px;
-  left: 120px;
-  top: 3983px;
-  /* Body 1 */
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-  color: #FFFFFF;
-}
-
-.Project8Title {
-  position: absolute;
-  width: 541px;
-  height: 124px;
-  left: 755px;
-  top: 3944px;
-  
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-  
-  color: #BC5A5B;
-}
-
-.Project8Detail {
-  position: absolute;
-  width: 568px;
-  height: 943px;
-  left: 753px;
-  top: 4215px;
-  /* Body 1 */ 
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-  color: #FFFFFF;
-}
-
-.GymnastBackground {
-  position: absolute;
-  width: 687px;
-  height: 515px;
-  left: -24px;
-  top: 4979px;
-  
-  background: #5F3C96;
-}
-
-.GymnastImg {
-  position: absolute;
-  width: 680px;
-  height: 1021px;
-  left: 120px;
-  top: 4746px;
-  
-  background: url(../../../assets/gymnast.png);
-}
-
-.Project9Title {
-  position: absolute;
-  width: 541px;
-  height: 124px;
-  left: 122px;
-  top: 4467px;
-  
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-  
-  color: #BC5A5B;
-}
-
-.Project9Detail {
-  position: absolute;
-  width: 568px;
-  height: 383px;
-  left: 120px;
-  top: 4605px;
-  /* Body 1 */
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-  color: #FFFFFF;
-}
-
-.Project10Title {
-  position: absolute;
-  width: 541px;
-  height: 124px;
-  left: 755px;
-  top: 5305px;
-  
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-  
-  color: #BC5A5B;
-}
-
-.Project10Detail {
-  position: absolute;
-  width: 568px;
-  height: 383px;
-  left: 753px;
-  top: 5443px;
-  /* Body 1 */
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-  color: #FFFFFF;
-}
-
-.Rectangle4 {
-  position: absolute;
-  width: 30px;
-  height: 168px;
-  left: 1410px;
-  top: 5612px;
-  
-  background: #5F3C96;
-}
-
-.Project11Title {
-  position: absolute;
-  width: 541px;
-  height: 124px;
-  left: 122px;
-  top: 5735px;
-  
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-  
-  color: #BC5A5B;
-}
-
-.Project11Detail {
-  position: absolute;
-  width: 568px;
-  height: 383px;
-  left: 120px;
-  top: 5873px;
-  /* Body 1 */
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-  color: #FFFFFF;
-}
-
-.Project12Title {
-  position: absolute;
-  width: 541px;
-  height: 124px;
-  left: 755px;
-  top: 5807px;
-  
-  font-family: 'Bodoni Moda';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 61px;
-  
-  color: #BC5A5B;
-}
-
-.Project12Detail {
-  position: absolute;
-  width: 568px;
-  height: 383px;
-  left: 753px;
-  top: 5945px;
-  /* Body 1 */
-  font-family: 'Roboto Flex';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-  /* or 167% */
-  color: #FFFFFF;
+  height: 322px;
+  margin: -40% -20% auto;
+  background: url(../../../assets/headset.png);
 }
