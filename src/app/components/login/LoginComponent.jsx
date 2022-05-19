@@ -53,6 +53,14 @@ export default function LoginComponent(props) {
     });
   }
 
+  function validateForm() {
+    return email.length > 0 && password.length > 0;
+}
+
+  function handleSubmit(event) {
+    event.preventDefault();
+}
+
   return (
     <div className="LoginComponent">
       <div style={{ padding: 30, color: "white" }}>
@@ -89,22 +97,30 @@ export default function LoginComponent(props) {
               Create a profile{" "}
             </Link>
           </div>
-          {/* <Form >
-     
-      <Grid style={{ padding: 20 }} item xs={12} > */}
-          {/* <Form.Group size="lg" controlId="email">
+
+        </Grid>
+        <Grid
+      container
+      spacing={1}
+      direction={'column'}
+      justify={'center'}
+      alignItems={'center'}>
+      <h1>RedBack Login</h1>
+      <Form onSubmit={handleSubmit} >
+      
+      <Grid style={{ padding: 20 }} item xs={12} >
+        <Form.Group size="lg" controlId="email">
           <CssTextField label="Email"
             type="email"
             sx={{ "& label": { color: "white" } }}
             inputProps={{
               style: { color: "white" },
             }}
+            onChange={(e) => setEmail(e.target.value)}
             variant="outlined" 
             style={{"borderColor":"#62656A"}}
-            value={email}
             fullWidth
             required
-            onChange={(e) => setEmail(e.target.value)}
             >
           </CssTextField>
         </Form.Group>
@@ -121,10 +137,8 @@ export default function LoginComponent(props) {
             style={{"borderColor":"#62656A"}}
             variant="outlined" 
             type="password"
-            value={password}
             fullWidth
             required
-            onChange={(e) => setPassword(e.target.value)}
           ></CssTextField>
         </Form.Group>
         </Grid>
@@ -136,10 +150,8 @@ export default function LoginComponent(props) {
               color: "#FFFF",
               padding: "10px 20px",
               fontSize: "15px"
-             
             }} 
-           
-          fullWidth type="submit">
+          fullWidth type="submit" disabled={!validateForm()}>
           Login
         </Button>
         <div className="createprofile"> <Link style={{
@@ -147,14 +159,9 @@ export default function LoginComponent(props) {
             }} 
             to={"./signUp"}>  Create a profile </Link>
         </div>
-
-        <div>
-
-      
-        </div>
        </Grid>
-      </Form> */}
-        </Grid>
+      </Form>
+    </Grid>
       </div>
     </div>
   );
