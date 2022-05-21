@@ -64,17 +64,26 @@ export default function LoginComponent(props) {
           alignItems={"center"}
         >
           <h1>RedBack Login</h1>
-          <input
+          <input className="Login-input"
             value={email}
             placeholder="username"
             onChange={(e) => setEmail(e.target.value)}
           ></input>
-          <input
+          <input className="Login-input"
             value={password}
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
           ></input>
-          <button component={NavLink} to="/" onClick={() => handleClick()}>
+          <button component={NavLink} to="/" onClick={() => handleClick()}
+           style={{
+             marginTop : 5,
+            borderRadius: 25,
+            width: "20%",
+            backgroundColor: "#e87461",
+            color: "#FFFF",
+            padding: "10px 20px",
+            fontSize: "15px"
+          }} >
             Submit
           </button>
           <div className="createprofile">
@@ -92,7 +101,8 @@ export default function LoginComponent(props) {
           {/* <Form >
      
       <Grid style={{ padding: 20 }} item xs={12} > */}
-          {/* <Form.Group size="lg" controlId="email">
+          {
+          /* <Form.Group size="lg" controlId="email">
           <CssTextField label="Email"
             type="email"
             sx={{ "& label": { color: "white" } }}
