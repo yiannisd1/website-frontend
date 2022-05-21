@@ -1,5 +1,6 @@
-.Signup {
-    text-align: center;
+    .Signup {
+    text-align: center !important;
+
     }
 
   
@@ -15,4 +16,23 @@
 
     .signUpInputs {
         padding-bottom: 20px;
+    }
+
+     .Signup-input{
+        /* display: block; */
+        width:140%;
+        background-color:white;
+        padding: .5rem .8rem .5rem .8rem;
+        border:0;
+        border-radius: 5px; 
+        font-size: 15px;
+        background-color:"white"
+    }
+    
+    .Signuph2{
+        color: white;
+    }
+
+    .Signup-textarea{
+        height: 15vh;
     }

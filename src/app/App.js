@@ -12,6 +12,7 @@ import ContactUsComponent from "./components/contactUs/ContactUsComponent";
 import SignUpComponent from "./components/signUp/SignUpComponent";
 import GlobalStateProvider from "./stores/GlobalStateProvider";
 
+
 function App() {
   return (
     <GlobalStateProvider>

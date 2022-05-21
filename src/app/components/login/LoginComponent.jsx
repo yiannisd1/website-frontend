@@ -9,7 +9,8 @@ import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
-import Context from "../../stores/context"
+import Context from "../../stores/context";
+import { makeStyles } from "@material-ui/core/styles";
 
 import "./LoginStyles.css";
 
@@ -18,26 +19,6 @@ export default function LoginComponent(props) {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const CssTextField = styled(TextField)({
-    "& label.Mui-focused": {
-      color: "white",
-    },
-    "& .MuiInput-underline:after": {
-      borderBottomColor: "white",
-    },
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "white",
-      },
-      "&:hover fieldset": {
-        borderColor: "white",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "white",
-      },
-    },
-  });
 
   function handleClick() {
     const userDetail = {
@@ -53,115 +34,90 @@ export default function LoginComponent(props) {
     });
   }
 
-  function validateForm() {
-    return email.length > 0 && password.length > 0;
-}
-
-  function handleSubmit(event) {
-    event.preventDefault();
-}
-
   return (
     <div className="LoginComponent">
-      <div style={{ padding: 30, color: "white" }}>
+      <div style={{ padding: 30 }}>
         <Grid
           container
-          spacing={1}
+          spacing={3}
           direction={"column"}
           justify={"center"}
           alignItems={"center"}
         >
-          <h1>RedBack Login</h1>
-          <input
-            value={email}
-            placeholder="username"
-            onChange={(e) => setEmail(e.target.value)}
-          ></input>
-          <input
-            value={password}
-            placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-          ></input>
-          <button component={NavLink} to="/" onClick={() => handleClick()}>
-            Submit
-          </button>
-          <div className="createprofile">
-            {" "}
-            <Link
+          <h1
+            style={{
+              marginLeft: "60px",
+              color: "#FFFF",
+            }}
+          >
+            RedBack Login
+          </h1>
+          <Grid item xs={12}>
+            <TextField
+              className="Login-input"
+              value={email}
+              type="email"
+              placeholder="username"
+              onChange={(e) => setEmail(e.target.value)}
+            ></TextField>
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              large
+              className="Login-input"
+              value={password}
+              type="password"
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+            ></TextField>
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              component={NavLink}
+              to="/"
+              onClick={() => handleClick()}
               style={{
+                borderRadius: 25,
+                backgroundColor: "#e87461",
+                color: "#FFFF",
+                width: "140%",
+                marginLeft: "10px",
+                marginTop: "20px",
+                padding: "10px 30px",
+                fontSize: "15px",
+              }}
+              type="submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+            >
+              Submit
+            </Button>
+          </Grid>
+
+          <Grid item xs={12}>
+            <div
+              style={{
+                marginLeft: "40px",
+
                 color: "#FFFF",
               }}
-              to={"./signUp"}
+              className="createprofile"
             >
               {" "}
-              Create a profile{" "}
-            </Link>
-          </div>
-
+              <Link
+                style={{
+                  marginLeft: "40px",
+                  color: "#FFFF",
+                }}
+                to={"./signUp"}
+              >
+                {" "}
+                Create a profile{" "}
+              </Link>
+            </div>
+          </Grid>
         </Grid>
-        <Grid
-      container
-      spacing={1}
-      direction={'column'}
-      justify={'center'}
-      alignItems={'center'}>
-      <h1>RedBack Login</h1>
-      <Form onSubmit={handleSubmit} >
-      
-      <Grid style={{ padding: 20 }} item xs={12} >
-        <Form.Group size="lg" controlId="email">
-          <CssTextField label="Email"
-            type="email"
-            sx={{ "& label": { color: "white" } }}
-            inputProps={{
-              style: { color: "white" },
-            }}
-            onChange={(e) => setEmail(e.target.value)}
-            variant="outlined" 
-            style={{"borderColor":"#62656A"}}
-            fullWidth
-            required
-            >
-          </CssTextField>
-        </Form.Group>
-        </Grid>
-
-        <Grid style={{ padding: 20 }} item xs={12}>
-        <Form.Group size="lg" controlId="password">
-          <CssTextField 
-            label="Password"
-            sx={{ "& label": { color: "white" }}}
-            inputProps={{
-              style: { color: "white" },
-            }}
-            style={{"borderColor":"#62656A"}}
-            variant="outlined" 
-            type="password"
-            fullWidth
-            required
-          ></CssTextField>
-        </Form.Group>
-        </Grid>
-        <Grid style={{ padding: 20 }} item xs={12}>
-        <Button 
-            style={{
-              borderRadius: 25,
-              backgroundColor: "#e87461",
-              color: "#FFFF",
-              padding: "10px 20px",
-              fontSize: "15px"
-            }} 
-          fullWidth type="submit" disabled={!validateForm()}>
-          Login
-        </Button>
-        <div className="createprofile"> <Link style={{
-              color: "#FFFF",
-            }} 
-            to={"./signUp"}>  Create a profile </Link>
-        </div>
-       </Grid>
-      </Form>
-    </Grid>
       </div>
     </div>
   );

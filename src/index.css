@@ -58,3 +58,16 @@ code {
   width: 80%;
   transform: rotatey(0deg) rotate(-10deg); 
 }
+
+::placeholder {
+  color: rgb(237, 235, 235);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: rgb(235, 229, 229);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: rgb(237, 237, 237);
+}
