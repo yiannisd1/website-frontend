@@ -110,7 +110,15 @@ export default function SignUpComponent() {
         </div>
         <div>
           <input className="Signup-input"
+            value={telePhone}
+            placeholder="telephone"
+            onChange={(e) => setPhNumber(e.target.value)}
+          ></input>
+        </div>
+        <div>
+          <input className="Signup-input"
             value={email}
+            type="email"
             placeholder="email"
             onChange={(e) => setEmail(e.target.value)}
           ></input>
@@ -118,17 +126,12 @@ export default function SignUpComponent() {
         <div>
           <input className="Signup-input"
             value={password}
+            type="password"
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
-        <div>
-          <input className="Signup-input"
-            value={telePhone}
-            placeholder="telephone"
-            onChange={(e) => setPhNumber(e.target.value)}
-          ></input>
-        </div>
+    
         <button
             style={{
             borderRadius: 25,

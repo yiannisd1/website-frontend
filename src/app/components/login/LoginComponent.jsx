@@ -66,11 +66,13 @@ export default function LoginComponent(props) {
           <h1>RedBack Login</h1>
           <input className="Login-input"
             value={email}
+            type="email"
             placeholder="username"
             onChange={(e) => setEmail(e.target.value)}
           ></input>
           <input className="Login-input"
             value={password}
+            type="password"
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
           ></input>
