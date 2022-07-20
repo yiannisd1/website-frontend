@@ -1,5 +1,4 @@
 import axios from "axios";
-import { toast } from "react-toastify";
 
 axios.defaults.baseURL = "http://localhost:8080";
 
@@ -22,7 +21,7 @@ axios.interceptors.response.use(
       case 400:
         alert("Error");
       case 401:
-        toast.error("unauthorised");
+        alert("unauthorised");
       case 404:
         alert("Not Found");
         break;
