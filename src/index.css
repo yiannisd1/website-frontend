@@ -5,13 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #380e4a !important;
+  /* background-color: white !important; */
+  background: linear-gradient(to bottom, #F7C7BF 0%, #FFFFFF 25%, #FFFFFF 50%, #D7CFDB 75%, #FFFFFF 100%) !important;
   color:white
 
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', 
     monospace;
 }
 

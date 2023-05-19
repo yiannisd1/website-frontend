@@ -17,23 +17,33 @@
     width: 100%;
 }
 
-.heading1, .heading2 {
-    font-size: 96px;
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-    text-shadow: white;
-    font-family: 'Rampart One', cursive;
+.heading1, .heading2, .important-message {
+    text-align: left;
+    padding-top: 80px;
+    margin-bottom: -80px;
+    padding-left: 100px;
 }
 
-.heading1 {
-    padding-top: 80px;
-    margin-bottom: -30px;
-    padding-right: 180px;
+.heading1  {
+    font-size: 128px;
+    font-weight: 800;
+    font-family: Poppins;
+    text-transform: uppercase;
+    color: #E9624C;
 }
 
 .heading2 {
-    padding-left: 180px;
+    font-size: 128px;
+    font-weight: 400;
+    font-family: Poppins;
+    text-transform: uppercase;
+    color: #370E4A;
+}
+
+.important-message {
+    font-size: 36px;
+    font-family: Poppins;
+    color: black;
 }
 
 .icon-grid {
@@ -45,26 +55,65 @@
     justify-content: center;
     grid-template-columns: repeat(4, 200px);
     grid-template-rows: repeat(1, 200px);
-    column-gap: 120px;
+    column-gap: 250px;
     margin:auto;
+    margin-top: -250px;
 }
 
 .grid-object {
-    display: grid;
-    margin: 20px;
-    background-color: #e87461;
+    padding-left: 75px;
+    margin-top: -300px;
     padding: 10px;
-    border-radius: 20px;
-    text-align: center;
+}
+
+.signup-button {
+    background-color: #370E4A;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px 10px;
+    margin-left: 100px;
+    margin-top: 100px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+.exercise-everyday-container {
+    width: auto;
+    height: auto;
+    margin: 60px auto;
 }
 
 img {
-    height: 100px;
+    height: 175px;
     width: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+
+.sports-img {
+    height: 350px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.enlarge-img {
+    width: 750px;
+    height: auto;
+    margin-left: 1000px;
+    position: relative;
+    top: -600px;
+}
+
+
+  
+  .signup-button:hover {
+    background-color: #d25b48;
+  }
+  
 
 .background {
     background-color: white;
@@ -82,30 +131,54 @@ img {
 
 
 .home-logo {
-    width: 500px;
+    width: 750px;
     height: auto;
     padding: 60px 0;
-    padding-right: 75px;
+    padding-right: 100px;
+    margin-bottom: 0;
+    margin-left: -200px;
 }
 .info h3 {
     padding-bottom: 50px;
-    font-size: 38px;
+    font-size: 48px;
     font-weight: bold;
     text-align: center;
 }
 
 .info {
-    margin-top: 100px;
-    color: #380E4A;
-    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 20px;
+    color: #FFFFFF;
+    font-size: 36px;
 }
 
-.directors-students-container {
-    width: 1100px;
-    height: auto;
+.info-text-box {
+    width: 1000px; 
+    height: 500px;
+    border-radius: 50px;
+    padding: 10px; 
+    background-color: #D6594C;  
+    margin-top: 75px;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    overflow: hidden;
+}
+
+.directors-container {
+    width: 1240px;
+    height: 487px;
     margin: 60px auto;
-    background-color: white;
+    background-color: #DFD8E2;
     border-radius: 20px;
+}
+
+.students-container {
+    width: auto;
+    height: auto;
+    margin: 100px auto;
+    border-radius: 20px;
+    padding-top: 50px;
 }
 
 .board-directors h3{
@@ -117,12 +190,15 @@ img {
 
 .directors-heading {
     padding: 50px 0;
-    color: black;
+    color: #D6594C;
 }
 
 .students-heading {
     padding: 60px 0;
-    color: black;
+    color: #40214A;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
 }
 
 .board-directors-members {
@@ -135,7 +211,7 @@ img {
 .grid-directors h4 {
     padding-top: 20px;
     font-size: 20px;
-    color: #e87461;
+    color: black;
     text-align: center;
 }
 
@@ -143,7 +219,7 @@ img {
     display: grid;
     grid-template-columns: repeat(2, 450px);
     grid-template-rows: repeat(3, 200px);
-    column-gap: 120px;
+    column-gap: 240px;
     justify-content: center;
 }
 
@@ -154,16 +230,19 @@ img {
 
 .grid-students h4{
     font-size: 20px;
-    color: #e87461;
+    font-weight: 700;
+    color: black;
     width: 300px;
     vertical-align: text-top;
-    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-left: 50px;
 }
 
 .grid-students p {
     color: black;
     width: 300px;
     font-size: 18px;
+    padding-left: 50px;
 }
 
 .user-info {
@@ -219,36 +298,89 @@ img {
 }
 
 .mvg-container{
-    width: 90%;
+    width: 100%;
     height: 600px;
-    color: black;
-    display: grid;
-    grid-template-columns: repeat(3,300px);
-    grid-template-rows: auto;
-    column-gap: 100px;
-    justify-content: center;
-    padding: 20px;
-    margin: auto;
+    padding-top: 750px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.mvg-grid h3{
-    font-weight: bold;
-    text-align: center;
+.mvg-img1{
+    width: 35%;
+    margin-bottom: 150px;
+    padding-top: 100px;
 }
 
-.mvg-grid{
-    background-color: white;
-    border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    padding: 20px;
+.mvg-img2{
+    width: 35%;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    position: absolute;
+    right: 0;
+    padding: 10px; 
 }
 
+.mvg-img3{
+    width: 35%;
+    margin-bottom: 550px;
+    padding-top: 150px;
+}
 .mvg-logos{
-    height: 100px;
-    width: auto;
+    width: 100%;
+    height: auto;
     display: block;
-    margin: auto;
+}
+
+.mvg-container h3{
+    font-weight: bold;
+    color: #40214A;
+    font-size: 96px;
+}
+
+.mvg-title1{
+    margin-left: 800px;
+    margin-top: -500px;
+}
+
+.mvg-title2{
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.mvg-title3{
+    margin-left: 1000px;
+    margin-top: -1000px;
+}
+
+.mvg-container p{
+    font-size: 36px;
+}
+
+.mvg-paragraph1{
+    margin-left: 800px;
+}
+
+.mvg-paragraph2{
+    margin-left: 100px;
+}
+
+.mvg-container ul{
+    font-size: 36px;
+    margin-left: 1000px;
+}
+
+.students-container,
+.mvg-container {
+  display: inline-block;
+  width: 100%;
+}
+
+.project-title{
+    font-weight: bolder;
+    color: #D6594C;
+    padding-bottom: 50px;
+    text-transform: uppercase;
 }
 
 .projects-container{
@@ -256,71 +388,94 @@ img {
     height: auto;
     color: black;
     text-align: center;
-    background-color: white;
+    background-color: #40214A;
     border-radius: 20px;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 30px;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
 .projects-container p{
-    width: auto;
-    margin-bottom: 0;
-    padding: 0;
-    text-align: left;
-    font-size: 18px;
-}
-
-.project-names{
     display: flex;
-    padding-left: 325px;
-    gap: 10px;
-    font-weight: bold;
-
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 1 auto;
 }
+
+.project-name{
+    display: inline;
+    margin: 0;
+    font-weight: bold;
+    color: white;
+    margin-top: -15px;
+}
+
 
 .project-number{
-    color: #333333;
+    display: inline;
+    margin-right: 25px;
+    color: #D6594C;
 }
 
-.project-title{
-    color: #e87461;
 
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1px;
+    max-width: 800px;
+    margin-left: 100px;
+}
+
+.project {
+    display: flex;
+    width: calc(150% - 10px); 
+    line-height: 0.02;
+    align-items: center;
+}  
+
+.project-info {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.project-list > div {
+    margin-bottom: 10px;
 }
 
 
 .footer-container{
-    background-color: #834c8c;
+    background-color: #CACCCC;
 }
 
 .footer-grid{
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: 350px;
-    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    padding-right: 70px;
+    align-items: center;
 }
 
 .footer-logo{
-    width: 250px;
+    width: 200px;
     height: auto;
-    display: block;
+    display: flex;
     margin: auto;
 }
 
 .socials-logo img{
-    width: 80px;
+    width: 75px;
     height: auto;
-    margin-top: 60px;
+    margin-top: 50px;
     margin-left: 0;
 }
 
 .socials-logo{
-    border-left: 5px solid #e87461;
-    padding-left: 30px;
-    font-size: 32px;
-    color: white;
+    padding-left: 75px;
 }
 
 .socials-logo p{
@@ -328,19 +483,25 @@ img {
 }
 
 .footer-msg{
-    color: white;
+    color: black;
     text-align: center;
     margin-top: 80px;
     margin-bottom: 0;
     padding-bottom: 40px;
 }
 
+.bold-black-footer {
+    font-weight: bold;
+    color: black;
+  }
+  
+
+
+
 @media only screen and (max-width: 1200px) {
     .icon-grid{
         column-gap: auto;
         height: auto;
         justify-content: center;
-        grid-template-rows: repeat(4, auto);
-        grid-template-columns: repeat(1, 300px);
     }
 } 

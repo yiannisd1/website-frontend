@@ -185,15 +185,9 @@ const NavBarComponent = () => {
         ></Typography>
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           <Button
-            style={{
-              borderRadius: 10,
-              backgroundColor: "#E87461",
-              padding: "18px 36px",
-              fontSize: "1vw",
-            }}
-            variant="contained"
+            variant="text"
             onClick={handleCloseNavMenu}
-            sx={{ mx: 8, color: "white", display: "block", marginLeft: "" }}
+            sx={{ mx: 20, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
             exact
             component={NavLink}
             to="/"
@@ -201,15 +195,9 @@ const NavBarComponent = () => {
             Home
           </Button>
           <Button
-            style={{
-              borderRadius: 10,
-              backgroundColor: "#E87461",
-              padding: "18px 36px",
-              fontSize: "1vw",
-            }}
-            variant="contained"
+            variant="text"
             onClick={handleCloseNavMenu}
-            sx={{ mx: 8, color: "white", display: "block", marginLeft: "" }}
+            sx={{ mx: 20, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
             exact
             component={NavLink}
             to="/aboutUs"
@@ -218,15 +206,9 @@ const NavBarComponent = () => {
           </Button>
 
           <Button
-            style={{
-              borderRadius: 10,
-              backgroundColor: "#E87461",
-              padding: "18px 36px",
-              fontSize: "1vw",
-            }}
-            variant="contained"
+            variant="text"
             onClick={handleCloseNavMenu}
-            sx={{ mx: 8, color: "white", display: "block", marginLeft: "" }}
+            sx={{ mx: 20, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
             exact
             component={NavLink}
             to="/ourTeam"
@@ -235,15 +217,9 @@ const NavBarComponent = () => {
           </Button>
 
           <Button
-            style={{
-              borderRadius: 10,
-              backgroundColor: "#E87461",
-              padding: "18px 36px",
-              fontSize: "1vw",
-            }}
-            variant="contained"
+            variant="text"
             onClick={handleCloseNavMenu}
-            sx={{ mx: 8, color: "white", display: "block", marginLeft: "" }}
+            sx={{ mx: 20, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
             exact
             component={NavLink}
             to="/ourProject"
@@ -252,16 +228,21 @@ const NavBarComponent = () => {
           </Button>
 
           <Button
-            style={{
-              borderRadius: 10,
-              backgroundColor: "#E87461",
-              padding: "18px 36px",
-              fontSize: "1vw",
-            }}
             size="large"
-            variant="contained"
+            variant="text"
             onClick={handleCloseNavMenu}
-            sx={{ mx: 8, color: "white", display: "block" }}
+            sx={{                 
+              mx: 20,
+              color: "black",
+              fontWeight: "bold",
+              display: "block",
+              marginRight: "",
+              border: "1px solid black",
+              backgroundColor: "transparent",
+              padding: "18px 18px",
+              fontSize: "0.8vw",
+              // marginTop: "-10px", 
+            }}
             exact
             component={NavLink}
             to="/contactUs"
@@ -271,17 +252,17 @@ const NavBarComponent = () => {
 
           {globalState.isLoggedIn ? (
             <Button
-              variant="contained"
-              style={{
-                borderRadius: 10,
-                backgroundColor: "#E87461",
-                padding: "18px 36px",
-                fontSize: "1vw",
-              }}
+              variant="text"
               sx={{
-                mx: 8,
-                color: "white",
+                mx: 20,
+                color: "black",
+                fontWeight: "bold",
                 display: "block",
+                marginRight: "",
+                border: "1px solid black",
+                backgroundColor: "transparent",
+                padding: "18px 18px",
+                fontSize: "0.8vw",
               }}
               exact
               component={NavLink}
@@ -292,17 +273,17 @@ const NavBarComponent = () => {
             </Button>
           ) : (
             <Button
-              variant="contained"
-              style={{
-                borderRadius: 10,
-                backgroundColor: "#E87461",
-                padding: "18px 36px",
-                fontSize: "1vw",
-              }}
+              variant="text"
               sx={{
-                mx: 8,
-                color: "white",
+                mx: 20,
+                color: "black",
+                fontWeight: "bold",
                 display: "block",
+                marginRight: "",
+                border: "1px solid black",
+                backgroundColor: "transparent",
+                padding: "18px 18px",
+                fontSize: "0.8vw",
               }}
               exact
               component={NavLink}
