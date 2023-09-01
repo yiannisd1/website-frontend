@@ -2,6 +2,7 @@ import React from "react";
 import "./OurProjectsStyles.css";
 import "@fontsource/bodoni-moda";
 import { ProjectContent } from "./ProjectContent";
+import FooterComponent from "../footer/FooterComponent"; // Ioannis Doulgerakis SIT378 Trimester 2 2023
 
 export default function OurProjectComponent() {
 
@@ -52,6 +53,7 @@ export default function OurProjectComponent() {
 			</div>
 			
       <ProjectContent/>
+	  <FooterComponent /> {/* Ioannis Doulgerakis SIT378 Trimester 2 2023*/}
 	  </div>
 	);
 }

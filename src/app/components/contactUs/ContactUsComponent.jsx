@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, TextField, Button, Typography } from "@mui/material";
+import FooterComponent from "../footer/FooterComponent"; // Ioannis Doulgerakis SIT378 Trimester 2 2023
 
 import "./ContactUs.css";
 import "@fontsource/bodoni-moda";
@@ -140,6 +141,8 @@ export default function ContactUsComponent() {
           </form>
         </Grid>
       </Grid>
+      <FooterComponent /> {/* Ioannis Doulgerakis SIT378 Trimester 2 2023*/}    
     </div>
   );
+      
 }

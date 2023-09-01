@@ -94,6 +94,19 @@ const NavBarComponent = () => {
                 Home
               </Typography>
             </MenuItem>
+
+            <MenuItem onClick={handleCloseNavMenu}>
+              <Typography
+                textAlign="center"
+                exact
+                component={NavLink}
+                to="/dailyTracking"
+              >
+                Daily Tracking
+              </Typography>
+            </MenuItem>
+            {/* Ioannis Doulgerakis SIT378 Trimester 2 2023 */}
+
             <MenuItem onClick={handleCloseNavMenu}>
               <Typography
                 textAlign="center"
@@ -184,20 +197,35 @@ const NavBarComponent = () => {
           to="/"
         ></Typography>
         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+
+          {/*Edited the mx value for all the buttons so that they fit properly on the 100% zoom on the browser / Ioannis Doulgerakis SIT378 Trimester 2 2023*/}
           <Button
             variant="text"
             onClick={handleCloseNavMenu}
-            sx={{ mx: 20, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
+            sx={{ mx: 10, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
             exact
             component={NavLink}
             to="/"
           >
             Home
           </Button>
+
           <Button
             variant="text"
             onClick={handleCloseNavMenu}
-            sx={{ mx: 20, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
+            sx={{ mx: 10, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
+            exact
+            component={NavLink}
+            to="/dailyTracking"
+          >
+            Daily Tracking
+          </Button>
+          {/* Ioannis Doulgerakis SIT378 Trimester 2 2023 */}
+
+          <Button
+            variant="text"
+            onClick={handleCloseNavMenu}
+            sx={{ mx: 10, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
             exact
             component={NavLink}
             to="/aboutUs"
@@ -208,7 +236,7 @@ const NavBarComponent = () => {
           <Button
             variant="text"
             onClick={handleCloseNavMenu}
-            sx={{ mx: 20, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
+            sx={{ mx: 10, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
             exact
             component={NavLink}
             to="/ourTeam"
@@ -219,7 +247,7 @@ const NavBarComponent = () => {
           <Button
             variant="text"
             onClick={handleCloseNavMenu}
-            sx={{ mx: 20, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
+            sx={{ mx: 10, color: "black", display: "block", marginRight: "", paddingTop: "20px"}}
             exact
             component={NavLink}
             to="/ourProject"
@@ -232,7 +260,7 @@ const NavBarComponent = () => {
             variant="text"
             onClick={handleCloseNavMenu}
             sx={{                 
-              mx: 20,
+              mx: 10,
               color: "black",
               fontWeight: "bold",
               display: "block",
@@ -254,7 +282,7 @@ const NavBarComponent = () => {
             <Button
               variant="text"
               sx={{
-                mx: 20,
+                mx: 10,
                 color: "black",
                 fontWeight: "bold",
                 display: "block",
@@ -275,7 +303,7 @@ const NavBarComponent = () => {
             <Button
               variant="text"
               sx={{
-                mx: 20,
+                mx: 10,
                 color: "black",
                 fontWeight: "bold",
                 display: "block",

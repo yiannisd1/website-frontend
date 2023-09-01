@@ -1,5 +1,6 @@
 import React from "react";
 import  "./AboutUsStyles.css"
+import FooterComponent from "../footer/FooterComponent"; // Ioannis Doulgerakis SIT378 Trimester 2 2023
 import barbell from "./img/barbell.png"
 import deadlift from "./img/deadlift.png"
 import gym from "./img/gym.png"
@@ -33,5 +34,8 @@ export default function AboutUsComponent() {
     <p className="about-us-footer">Join us today and enjoy a fully immersive experience where you will enjoy individual exercise routines all the time while receiving real-time 
       feedback and tips on how to improve their performance. Share your exercise with our community and engage with other users both casually and 
       competitively. <br></br>Act now and be the best person you can be.</p>
+
+    <FooterComponent /> {/* Ioannis Doulgerakis SIT378 Trimester 2 2023*/}
+
   </div>;
 }

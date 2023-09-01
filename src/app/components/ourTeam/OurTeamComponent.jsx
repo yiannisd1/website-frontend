@@ -10,6 +10,7 @@ import RaymondCorrigan from "./img/Raymond-Corrigan.png"
 import AkshatArora from "./img/Akshat-Arora.png"
 import MasonWilliamAllcorn from "./img/Mason-William-Allcorn.png"
 import data from "../../../../src/assets/project.json"
+import FooterComponent from "../footer/FooterComponent"; // Ioannis Doulgerakis SIT378 Trimester 2 2023
 
 export default function OurTeamComponent() {
   return <div className="our-team">
@@ -35,6 +36,6 @@ export default function OurTeamComponent() {
       <div className="our-grid-students"><img src = {AkshatArora}/><div><h4>{data.leaders[3].name}</h4><p>{data.leaders[3].team}</p></div></div>
       <div className="our-grid-students"><img src = {MasonWilliamAllcorn}/><div><h4>{data.leaders[5].name}</h4><p>{data.leaders[5].team}</p></div></div>
       </div>
-
+      <FooterComponent /> {/* Ioannis Doulgerakis SIT378 Trimester 2 2023*/}
   </div>;
 }

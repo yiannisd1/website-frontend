@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
 import Context from "../../stores/context";
+import FooterComponent from "../footer/FooterComponent"; // Ioannis Doulgerakis SIT378 Trimester 2 2023
 
 import "./LoginStyles.css";
 
@@ -116,6 +117,7 @@ export default function LoginComponent(props) {
           </Grid>
         </Grid>
       </div>
+      <FooterComponent /> {/* Ioannis Doulgerakis SIT378 Trimester 2 2023*/}
     </div>
   );
 }

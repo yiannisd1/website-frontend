@@ -1,0 +1,20 @@
+.body {
+    background-color: #5A226D;
+}
+
+.glowing-bar-container .CircularProgressbar-path {
+    animation: glowing 2s infinite; /* Apply the glowing animation */
+}
+
+@keyframes glowing {
+    0% {
+        filter: drop-shadow(0 0 5px hsl(60, 100%, 50%)); /* Initial shadow */
+    }
+    50% {
+        filter: drop-shadow(0 0 7px hsl(60, 100%, 50%)); /* Glowing shadow */
+    }
+    100% {
+        filter: drop-shadow(0 0 5px hsl(60, 100%, 50%)); /* Back to initial shadow */
+    }
+}
+

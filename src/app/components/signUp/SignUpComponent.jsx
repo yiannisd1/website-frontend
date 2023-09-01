@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import { alpha, styled } from "@mui/material/styles";
 import agent from "../../proxy/userService";
 import Grid from "@mui/material/Grid";
+import FooterComponent from "../footer/FooterComponent"; // Ioannis Doulgerakis SIT378 Trimester 2 2023
 
 export default function SignUpComponent() {
   const [username, setUsername] = useState("");
@@ -122,6 +123,8 @@ export default function SignUpComponent() {
       ) : (
         <h1>User sucessfully created</h1>
       )}
+      <FooterComponent /> {/* Ioannis Doulgerakis SIT378 Trimester 2 2023*/}
     </div>
+    
   );
 }
