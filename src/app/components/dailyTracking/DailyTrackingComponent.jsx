@@ -41,9 +41,47 @@ const fetchContent = () => {
 
 }
 
+
 useEffect(() => {
-    fetchContent();
-}, []);
+    // Dynamically create a script element to load the Google API Client Library
+    const script = document.createElement('script');
+    script.src = 'https://apis.google.com/js/api.js';
+    script.async = true;
+    script.defer = true;
+
+    // Attach an event listener to handle script load
+    script.addEventListener('load', () => {
+      // Initialize Google Sign-In
+      window.gapi.load('auth2', () => {
+        window.gapi.auth2.init({
+          client_id: '821616315515-todhstc46ephg2ridgt6n013nsp9oeom.apps.googleusercontent.com',
+        }).then(() => {
+          // Attach an event listener to your sign-in button
+          document.getElementById('google-signin-button').addEventListener('click', () => {
+            const auth2 = window.gapi.auth2.getAuthInstance();
+            auth2.signIn().then(() => {
+              if (auth2.isSignedIn.get()) {
+                // Request access to Google Fit API
+                window.gapi.client.load('fitness', 'v1', () => {
+                  window.gapi.client.fitness.users.dataSources.list({
+                    userId: 'me',
+                  }).then(response => {
+                    console.log('Data sources:', response.result);
+                    // Handle the fitness data sources here
+                  }).catch(error => {
+                    console.error('Error loading fitness data sources:', error);
+                  });
+                });
+              }
+            });
+          });
+        });
+      });
+    });
+
+    // Append the script element to the document's head
+    document.head.appendChild(script);
+  }, []);
     return(
         <div className='body'>
             <div style={{overflow: "hidden"}}>
@@ -197,19 +235,13 @@ useEffect(() => {
                 </div>
 
 
-
                 {/* Power - YD */}
                 <p style= {{position: "relative", top: "-150px", fontWeight:"bold", fontSize: "30px", color: "white"}}>Power</p>
-
-
+                <button id="google-signin-button" style={{position: "relative", top: "-50px", fontWeight:"bold", fontSize: "15px", color: "black"}}>Sign in with Google</button>
+              
 
                 {/* Cadence - YD */}
                 <p style= {{position: "relative", top: "-50px", fontWeight:"bold", fontSize: "30px", color: "white"}}>Cadence</p>
-
-
-
-
-
 
 
                 <FooterComponent /> 
@@ -218,5 +250,7 @@ useEffect(() => {
         </div>
     )
 }
+
+
 
 export default DataSum;
