@@ -6,7 +6,7 @@ import Speed from './Speed';
 import FooterComponent from "../footer/FooterComponent";
 import { signInWithGooglePopup } from './utils/firebase';
 
-
+//YD
 const PowerInfogramComponent = () => {
     useEffect(() => {
         const script = document.createElement('script');
@@ -57,7 +57,8 @@ const PowerInfogramComponent = () => {
       </>
     );
   };
-  
+
+//YD
 const CadenceInfogramComponent = () => {
 
     useEffect(() => {
@@ -111,6 +112,7 @@ const CadenceInfogramComponent = () => {
 );
 };
 
+//YD
 const AverageSpeedInfogramComponent = () => {
 
     useEffect(() => {
@@ -164,6 +166,7 @@ const AverageSpeedInfogramComponent = () => {
 );
 };
 
+//YD
 const HeartRateInfogramComponent = () => {
 
     useEffect(() => {
