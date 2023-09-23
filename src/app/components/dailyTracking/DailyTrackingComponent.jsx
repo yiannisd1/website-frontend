@@ -1,224 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import Calories from './Calories';
 import Distance from './Distance';
-import HeartRate from './HeartRate';
-import Speed from './Speed';
+import Cadence from './Cadence'; //YD
+import Power from './Power'; //YD
+import CombinedComponentSpeed from './Speed'; //YD
+import CombinedComponentHeartRate from './HeartRate'; //YD
 import FooterComponent from "../footer/FooterComponent";
-import { signInWithGooglePopup } from './utils/firebase';
-
-//YD
-const PowerInfogramComponent = () => {
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://e.infogram.com/js/dist/embed.js?R2l';
-        script.async = true;
-        script.type = 'text/javascript';
-        document.body.appendChild(script);
-        return () => {
-            document.body.removeChild(script);
-        };
-        }, []);
-
-    return (
-      <>
-        <div
-        style={{
-          position: 'relative',
-          top: '-100px', 
-        }}
-        >
-        <script
-          id="infogram_0_aea2de4b-11b5-4c27-857a-ba168d9485c5"
-          title="Power"
-          src="https://infogram.com/power-1h1749vegrell6z?live"
-          type="text/javascript"
-        ></script>
-        </div>
-        <div
-          style={{
-            padding: '8px 0',
-            fontFamily: 'Arial!important',
-            fontSize: '13px!important',
-            lineHeight: '15px!important',
-            textAlign: 'center',
-            borderTop: 'none',
-            margin: '0 30px',
-          }}
-        >
-        </div>
-        <div
-      style={{
-        maxWidth: '500px',
-        margin: '0 auto',  
-      }}
-    >
-      <div className="infogram-embed" data-id="aea2de4b-11b5-4c27-857a-ba168d9485c5" data-type="interactive" data-title="Line Chart"></div>
-    </div>
-      </>
-    );
-  };
-
-//YD
-const CadenceInfogramComponent = () => {
-
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://e.infogram.com/js/dist/embed.js?g0z';
-        script.async = true;
-        script.type = 'text/javascript';
-        document.body.appendChild(script);
-
-        return () => {
-            document.body.removeChild(script);
-        };
-        }, []);
-
-    return (
-    <>
-    <div
-    style={{
-        position: 'relative',
-        top: '0px', 
-    }}
-    >
-    <script
-        id="infogram_0_fa24f039-5378-4485-a71f-6344e0de1134"
-        title="Power"
-        src="https://e.infogram.com/js/dist/embed.js?pwU"
-        type="text/javascript"
-    ></script>
-    </div>
-    <div
-        style={{
-        padding: '8px 0',
-        fontFamily: 'Arial!important',
-        fontSize: '13px!important',
-        lineHeight: '15px!important',
-        textAlign: 'center',
-        borderTop: 'none',
-        margin: '0 30px',
-        }}
-    >
-    </div>
-    <div
-    style={{
-    maxWidth: '500px',
-    margin: '0 auto',  
-    }}
->
-    <div className="infogram-embed" data-id="aea2de4b-11b5-4c27-857a-ba168d9485c5" data-type="interactive" data-title="Line Chart"></div>
-</div>
-    </>
-);
-};
-
-//YD
-const AverageSpeedInfogramComponent = () => {
-
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://e.infogram.com/js/dist/embed.js?g0z';
-        script.async = true;
-        script.type = 'text/javascript';
-        document.body.appendChild(script);
-
-        return () => {
-            document.body.removeChild(script);
-        };
-        }, []);
-
-    return (
-    <>
-    <div
-    style={{
-        position: 'relative',
-        top: '-250px', 
-    }}
-    >
-    <script
-        id="infogram_0_91de0fc3-02f8-49ac-ac8b-813b2adb336b"
-        title="Power"
-        src="https://e.infogram.com/js/dist/embed.js?pwU"
-        type="text/javascript"
-    ></script>
-    </div>
-    <div
-        style={{
-        padding: '8px 0',
-        fontFamily: 'Arial!important',
-        fontSize: '13px!important',
-        lineHeight: '15px!important',
-        textAlign: 'center',
-        borderTop: 'none',
-        margin: '0 30px',
-        }}
-    >
-    </div>
-    <div
-    style={{
-    maxWidth: '500px',
-    margin: '0 auto',  
-    }}
->
-    <div className="infogram-embed" data-id="aea2de4b-11b5-4c27-857a-ba168d9485c5" data-type="interactive" data-title="Line Chart"></div>
-</div>
-    </>
-);
-};
-
-//YD
-const HeartRateInfogramComponent = () => {
-
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://e.infogram.com/js/dist/embed.js?g0z';
-        script.async = true;
-        script.type = 'text/javascript';
-        document.body.appendChild(script);
-
-        return () => {
-            document.body.removeChild(script);
-        };
-        }, []);
-
-    return (
-    <>
-    <div
-    style={{
-        position: 'relative',
-        top: '-350px', 
-    }}
-    >
-    <script
-        id="infogram_0_333d9046-7850-46a4-9903-102a5ef0c316"
-        title="Power"
-        src="https://e.infogram.com/js/dist/embed.js?pwU"
-        type="text/javascript"
-    ></script>
-    </div>
-    <div
-        style={{
-        padding: '8px 0',
-        fontFamily: 'Arial!important',
-        fontSize: '13px!important',
-        lineHeight: '15px!important',
-        textAlign: 'center',
-        borderTop: 'none',
-        margin: '0 30px',
-        }}
-    >
-    </div>
-    <div
-    style={{
-    maxWidth: '500px',
-    margin: '0 auto',  
-    }}
->
-    <div className="infogram-embed" data-id="aea2de4b-11b5-4c27-857a-ba168d9485c5" data-type="interactive" data-title="Line Chart"></div>
-</div>
-    </>
-);
-};
+// import { signInWithGooglePopup } from './utils/firebase';
 
 const dailyTracking = (props) => {
 
@@ -283,9 +71,7 @@ const dailyTracking = (props) => {
 //       console.error('Google sign-in error:', error);
 //     }
 //   };
-
-useEffect(() => {
-//     // Dynamically create a script element to load the Google API Client Library
+ // Dynamically create a script element to load the Google API Client Library
 //     const script = document.createElement('script');
 //     script.src = 'https://apis.google.com/js/api.js';
 //     script.async = true;
@@ -313,6 +99,7 @@ useEffect(() => {
 
 //     //document.head.appendChild(script);
 
+useEffect(() => {
     fetchContent();
   }, []);
 
@@ -402,14 +189,14 @@ useEffect(() => {
                 {/* Heart Rate - YD */}
                 <p style= {{position: "relative", top: "-400px", fontWeight:"bold", fontSize: "30px", color: "white"}}>Heart Rate</p>
 
-                <HeartRateInfogramComponent />    
+                <CombinedComponentHeartRate/>    
                 
                 <p style= {{position: "relative", top: "-250px", left: "210px", fontSize: "30px", color: "white"}}>Today's Average Heart Rate</p>
                 <div style={{position: "relative", top: "-200px", left:"280px"}}>
               
                 <div className="row mt-3">
                     <div className="col-md-2">
-                        <HeartRate score={reviewScore9}></HeartRate>
+                        <CombinedComponentHeartRate score={reviewScore9}></CombinedComponentHeartRate>
                     </div>
                 </div>
                 </div>
@@ -419,7 +206,7 @@ useEffect(() => {
                 
                 <div className="row mt-3">
                     <div className="col-md-2">
-                        <HeartRate score={reviewScore10}></HeartRate>
+                        <CombinedComponentHeartRate score={reviewScore10}></CombinedComponentHeartRate>
                     </div>
                 </div>
                 </div>
@@ -427,14 +214,16 @@ useEffect(() => {
 
                 {/* Speed - YD */}
                 <p style= {{position: "relative", top: "-300px", fontWeight:"bold", fontSize: "30px", color: "white"}}>Speed</p>
-
-                <AverageSpeedInfogramComponent />
+                
+                {/* YD */}
+                <CombinedComponentSpeed/>
 
                 <p style= {{position: "relative", top: "-150px", left: "210px", fontSize: "30px", color: "white"}}>Today's Average Speed</p>
                 <div style={{position: "relative", top: "-100px", left:"280px"}}>
                 <div className="row mt-3">
                     <div className="col-md-2">
-                        <Speed score={reviewScore11}></Speed>
+                        {/* YD */}
+                        <CombinedComponentSpeed score={reviewScore11}></CombinedComponentSpeed> 
                     </div>
                 </div>
                 </div>
@@ -443,7 +232,8 @@ useEffect(() => {
                 <div style={{position: "relative", top: "-340px", left:"800px"}}>
                 <div className="row mt-3">
                     <div className="col-md-2">
-                        <Speed score={reviewScore12}></Speed>
+                        {/* YD */}
+                        <CombinedComponentSpeed score={reviewScore12}></CombinedComponentSpeed>
                     </div>
                 </div>
                 </div>
@@ -451,13 +241,13 @@ useEffect(() => {
  
                 {/* Power - YD */}
                 <p style= {{position: "relative", top: "-150px", fontWeight:"bold", fontSize: "30px", color: "white"}}>Power</p>
-                <PowerInfogramComponent />
+                <Power/>
 
                 {/* Cadence - YD */}
                 <p style= {{position: "relative", top: "-50px", fontWeight:"bold", fontSize: "30px", color: "white"}}>Cadence</p>
-                <CadenceInfogramComponent />
+                <Cadence/>
  
-
+                {/* Footer - YD */}
                 <FooterComponent />
 
             </div>
